@@ -37,22 +37,3 @@
   62% { transform: translateX(0%) rotate(-720deg); box-shadow: none; }
    100% { transform: translateX(0%) rotate(-720deg); box-shadow: 0 0 110px #000; }
 }
-
-  /* Page Changes */
-@-webkit-keyframes pageright {
-   0% { -webkit-transform: translateX(33.33%); }
-   100% { -webkit-transform: translateX(0%); }
-}
-@keyframes pageright {
-   0% { transform: translateX(33.33%); }
-   100% { transform: translateX(0%); }
-}
-
-@-webkit-keyframes pageleft {
-   0% { -webkit-transform: translateX(-33.33%); }
-   100% { -webkit-transform: translateX(0%); }
-}
-@keyframes pageleft {
-   0% { transform: translateX(-33.33%); }
-   100% { transform: translateX(0%); }
-}
