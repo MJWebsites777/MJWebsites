@@ -46,7 +46,7 @@ body {
   z-index: 20;
   top: 50%;
   margin-top: calc(-2.5vw - 1px);
-  opacity: 0.75;
+  opacity: 0.65;
   -webkit-transition: opacity 500ms ease-in-out;
   -moz-transition: opacity 500ms ease-in-out;
   -ms-transition: opacity 500ms ease-in-out;
@@ -106,9 +106,16 @@ body {
 /* Pages Styles */
 .pageSlider {
   position: relative;
-  /* Home Page */ }
+  width: 200vw;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out;
+  -ms-transition: -ms-transform 1s ease-in-out;
+  -o-transition: -o-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  /* Home Page */
+  /* About Page */ }
   .pageSlider .page {
-    position: relative;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     /*border: 5px solid #000;*/ }
@@ -121,8 +128,7 @@ body {
     background: url(../images/lake.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
-    background-attachment: fixed; }
+    background-size: cover; }
     .pageSlider .homePage .title {
       color: #FFF;
       font-family: "RockwellEB";
@@ -143,6 +149,13 @@ body {
         transition: opacity 1.5s ease-in-out; }
       .pageSlider .homePage .title .name {
         font-size: 3.5vw; }
+  .pageSlider .aboutPage {
+    left: 100vw;
+    top: 0;
+    background: url(../images/cali.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; }
 
 /* Logo Styles */
 .logo {
@@ -335,27 +348,6 @@ body {
   100% {
     transform: translateX(0%) rotate(-720deg);
     box-shadow: 0 0 110px #000; } }
-/* Page Changes */
-@-webkit-keyframes pageright {
-  0% {
-    -webkit-transform: translateX(33.33%); }
-  100% {
-    -webkit-transform: translateX(0%); } }
-@keyframes pageright {
-  0% {
-    transform: translateX(33.33%); }
-  100% {
-    transform: translateX(0%); } }
-@-webkit-keyframes pageleft {
-  0% {
-    -webkit-transform: translateX(-33.33%); }
-  100% {
-    -webkit-transform: translateX(0%); } }
-@keyframes pageleft {
-  0% {
-    transform: translateX(-33.33%); }
-  100% {
-    transform: translateX(0%); } }
 /* Apply Animations */
 .rollIn {
   animation: rollin 2s forwards;
@@ -368,13 +360,5 @@ body {
 .rollLeft {
   animation: rollleft 3s forwards;
   -webkit-animation: rollleft 3s forwards; }
-
-.pageRight {
-  animation: pageright 1.8s forwards;
-  -webkit-animation: pageright 1.8s forwards; }
-
-.pageLeft {
-  animation: pageleft 1.8s forwards;
-  -webkit-animation: pageleft 1.8s forwards; }
 
 /*# sourceMappingURL=main.css.map */
