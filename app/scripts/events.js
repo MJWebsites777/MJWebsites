@@ -48,8 +48,19 @@ $(window).bind("keydown", function(e) {
 	}
 });
 
-$(document).on("click", ".leftArrow", function() { if (currentPage=="Home"){gotoAbout();} else if(currentPage=="About"){return;} else if(currentPage=="Portfolio"){return;} else if(currentPage=="Contact"){gotoHome();}; });
-$(document).on("click", ".rightArrow", function() { if (currentPage=="Home"){gotoContact();} else if(currentPage=="About"){gotoHome()} else {return;}; });
+var translateX = 0;
+$(document).on("click", ".leftArrow", function() {
+	translateX += 100;
+	$('.logo').attr('class', 'logo').addClass('.rollLeft');
+ 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
+ 	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+});
+$(document).on("click", ".rightArrow", function() {
+	translateX += -100;
+	$('.logo').attr('class', 'logo').addClass('.rollRight');
+	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
+	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+});
 	 
 $(window).bind("keyup", function(e) {
 	keyCode = "UP - "+e.keyCode;
