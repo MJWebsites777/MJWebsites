@@ -21,3 +21,8 @@
        -o-transform: $args;
       	  transform: $args;
 }
+
+@mixin animation($args...){
+  animation: $args;
+  -webkit-animation: $args;
+}

@@ -1,41 +1,16 @@
 /* Apply Animations */
 .rollIn {
-  animation: rollin 2s forwards;
-    -webkit-animation: rollin 2s forwards;
+  @include animation(rollin 2s forwards);
 }
-.bgtSlide {
-  animation: bgtslide 15s infinite ease-in-out;
-    -webkit-animation: bgtslide 15s infinite ease-in-out;
+.rollRight {
+  @include animation(rollright 3s forwards);
 }
-.rollHomeFromAbout {
-  animation: rollhomeright 3s forwards;
-    -webkit-animation: rollhomeright 3s forwards;
+.rollLeft {
+  @include animation(rollleft 3s forwards);
 }
-.rollHomeFromContact {
-  animation: rollhomeleft 3s forwards;
-    -webkit-animation: rollhomeleft 3s forwards;
+.pageRight {
+  @include animation(pageright 1.8s forwards);
 }
-.rollAbout {
-  animation: rollabout 3s forwards;
-    -webkit-animation: rollabout 3s forwards;
-}
-.rollContact {
-  animation: rollcontact 3s forwards;
-    -webkit-animation: rollcontact 3s forwards;
-}
-.gotoAbout {
-  animation: gotoabout 1.8s forwards;
-    -webkit-animation: gotoabout 1.8s forwards;
-}
-.gotoContact {
-  animation: gotocontact 1.8s forwards;
-    -webkit-animation: gotocontact 1.8s forwards;
-}
-.gotoHomeFromAbout {
-  animation: gotohomeright 1.8s forwards;
-    -webkit-animation: gotohomeright 1.8s forwards;
-}
-.gotoHomeFromContact {
-  animation: gotohomeleft 1.8s forwards;
-    -webkit-animation: gotohomeleft 1.8s forwards;
+.pageLeft {
+  @include animation(pageleft 1.8s forwards);
 }

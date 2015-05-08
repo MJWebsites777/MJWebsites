@@ -38,29 +38,30 @@ body {
   margin-top: calc(-25vw - 10px);
   z-index: 1;
 }
-.leftArrow {
+.arrow {
   width: 5vw;
   height: 5vw;
   position: fixed;
+  transform: rotateZ(-45deg);
+  z-index: 20;
+  top: 50%;
+  margin-top: calc(-2.5vw - 1px);
+  opacity: 0.75;
+  @include transition(opacity 500ms ease-in-out);
+  cursor: pointer;
+}
+  .arrow:hover {
+    opacity: 1;
+  }
+.leftArrow {
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
-  transform: rotateZ(-45deg);
-  z-index: 10;
   left: 5vw;
-  top: 50%;
-  margin-top: calc(-2.5vw - 1px);
 }
 .rightArrow {
-  width: 5vw;
-  height: 5vw;
-  position: fixed;
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
-  transform: rotateZ(-45deg);
-  z-index: 10;
   right: 5vw;
-  top: 50%;
-  margin-top: calc(-2.5vw - 1px);
 }
 
 /* Vignette Styles */
@@ -132,7 +133,7 @@ body {
       color: #FFF;
       font-family: "RockwellEB";
       position: relative;
-      top: 53%;
+      top: 47%;
       cursor: default;
       z-index: 10;
 
@@ -140,9 +141,9 @@ body {
         display: block;
         font-size: 1.75vw;
         text-shadow: 0 0 7px #000;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
         opacity: 0;
-        @include transition(opacity 1s ease-in-out);
+        @include transition(opacity 1.5s ease-in-out);
       }
       .name {
         font-size: 3.5vw;
@@ -174,7 +175,7 @@ body {
     color: #FFF;
     font-family: "RockwellEB";
     position: relative;
-    top: 40px;
+    top: 15%;
     @include transition(opacity 300ms ease-in);
   }
   .M {
@@ -192,8 +193,8 @@ body {
     //font-size: 23pt;
     font-size: 1.5vw;
     text-align: center;
-    top: -10px;
-    right: 35px;
+    top: -1%;
+    right: 10%;
   }
 }
 .logo:hover {
