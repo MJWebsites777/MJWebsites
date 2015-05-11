@@ -62,3 +62,17 @@ function gotoContact() {
 		});
 	}
 }
+
+function goLeft(){
+	translateX += 100;
+	$('.logo').attr('class', 'logo').addClass('rollLeft');
+ 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
+ 	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+}
+
+function goRight(){
+	translateX += -100;
+	$('.logo').attr('class', 'logo').addClass('rollRight');
+	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
+	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+}

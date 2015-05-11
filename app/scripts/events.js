@@ -25,23 +25,21 @@ $(window).bind("keydown", function(e) {
 	switch (key) {
 		case 37:
 		case 65:
-			//$('.leftArrow').css("opacity", "1");
-			if (currentPage=="Home"){gotoAbout();} else if(currentPage=="About"){return;} else if(currentPage=="Portfolio"){return;} else if(currentPage=="Contact"){gotoHome();};
+			//Left
+			goLeft();
 			break;
 		case 38:
 		case 87:
-			//$('.upArrow').css("opacity", "1");
-			if (currentPage=="Portfolio"){gotoHome();} else {return;};
+			//Up
 			break;
 		case 39:
 		case 68:
-			//$('.rightArrow').css("opacity", "1");
-			if (currentPage=="Home"){gotoContact();} else if(currentPage=="About"){gotoHome()} else {return;};
+			//Right
+			goRight();
 			break;
 		case 40:
 		case 83:
-			//$('.downArrow').css("opacity", "1");
-			if (currentPage=="Home"){gotoPortfolio();} else {return;};
+			//Down
 			break;
 		default:
 			break;
@@ -50,16 +48,10 @@ $(window).bind("keydown", function(e) {
 
 var translateX = 0;
 $(document).on("click", ".leftArrow", function() {
-	translateX += 100;
-	$('.logo').attr('class', 'logo').addClass('.rollLeft');
- 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
- 	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+	goLeft();
 });
 $(document).on("click", ".rightArrow", function() {
-	translateX += -100;
-	$('.logo').attr('class', 'logo').addClass('.rollRight');
-	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
-	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+	goRight();
 });
 	 
 $(window).bind("keyup", function(e) {
