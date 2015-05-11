@@ -4,7 +4,9 @@
 }
 .rollRight {
   @include animation(rollright 3s forwards);
+  animation-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 .rollLeft {
   @include animation(rollleft 3s forwards);
+  animation-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
