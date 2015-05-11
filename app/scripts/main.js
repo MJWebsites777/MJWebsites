@@ -5,6 +5,7 @@ var currentPage = "Home";
 
 $(document).ready(function(e) {
 	console.log(navigator.userAgent);
+	$('.logo').attr('class', 'logo').addClass('rollIn');
 
 	var spanCount = 0;
 	var interval = setInterval(function(){
