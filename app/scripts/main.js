@@ -16,7 +16,7 @@ $(document).ready(function(e) {
 		else {
 			clearInterval(interval);
 		}
-	}, 1000);
+	}, 1500);
 	setInterval(function(){ 
 		$('.currentpage').html("Current Page: "+currentPage); 
 		$('.lastpage').html("Last Page: "+lastPage); 
