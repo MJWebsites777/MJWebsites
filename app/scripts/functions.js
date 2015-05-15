@@ -64,15 +64,56 @@ function gotoContact() {
 }
 
 function goLeft(){
+	if (translateX == 0) return;
 	translateX += 100;
-	$('.logo').attr('class', 'logo').addClass('rollLeft');
+	logoRotate += -720;
+	$('.logo').attr('class', 'logo')/*.addClass('rollLeft')*/;
+	$('.logo').css('transform', 'rotate('+logoRotate+'deg)');
  	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
- 	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+ 	$('.pageSlider').css({
+	  '-webkit-transform' : 'translateX('+translateX+'vw)',
+	  '-moz-transform'    : 'translateX('+translateX+'vw)',
+	  '-ms-transform'     : 'translateX('+translateX+'vw)',
+	  '-o-transform'      : 'translateX('+translateX+'vw)',
+	  'transform'         : 'translateX('+translateX+'vw)'
+	});
 }
 
 function goRight(){
+	if (translateX == -500) return;
 	translateX += -100;
-	$('.logo').attr('class', 'logo').addClass('rollRight');
+	logoRotate += 720;
+	$('.logo').attr('class', 'logo')/*.addClass('rollRight')*/;
+	$('.logo').css('transform', 'rotate('+logoRotate+'deg)');
 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
-	$('.pageSlider').css('transform', 'translateX('+translateX+'vw)');
+	$('.pageSlider').css({
+	  '-webkit-transform' : 'translateX('+translateX+'vw)',
+	  '-moz-transform'    : 'translateX('+translateX+'vw)',
+	  '-ms-transform'     : 'translateX('+translateX+'vw)',
+	  '-o-transform'      : 'translateX('+translateX+'vw)',
+	  'transform'         : 'translateX('+translateX+'vw)'
+	});
+}
+
+function checkPage(){
+	if (translateX == 0){
+		$('.leftArrow').css('opacity', '0');
+		setTimeout(function(){
+			$('.leftArrow').css('display', 'none');
+		}, 500);
+	}
+	else if (translateX == -500){
+		$('.rightArrow').css('opacity', '0');
+		setTimeout(function(){
+			$('.rightArrow').css('display', 'none');
+		}, 500);
+	}
+	else {
+		$('.rightArrow').css('display', '');
+		$('.leftArrow').css('display', '');
+		setTimeout(function(){
+			$('.rightArrow').css('opacity', '');
+			$('.leftArrow').css('opacity', '');
+		}, 50);
+	}
 }

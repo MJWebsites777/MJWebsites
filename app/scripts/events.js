@@ -27,6 +27,7 @@ $(window).bind("keydown", function(e) {
 		case 65:
 			//Left
 			goLeft();
+			checkPage();
 			break;
 		case 38:
 		case 87:
@@ -36,6 +37,7 @@ $(window).bind("keydown", function(e) {
 		case 68:
 			//Right
 			goRight();
+			checkPage();
 			break;
 		case 40:
 		case 83:
@@ -47,11 +49,14 @@ $(window).bind("keydown", function(e) {
 });
 
 var translateX = 0;
+var logoRotate = 0;
 $(document).on("click", ".leftArrow", function() {
 	goLeft();
+	checkPage();
 });
 $(document).on("click", ".rightArrow", function() {
 	goRight();
+	checkPage();
 });
 	 
 $(window).bind("keyup", function(e) {
