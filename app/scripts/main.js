@@ -7,6 +7,10 @@ $(document).ready(function(e) {
 	console.log(navigator.userAgent);
 	$('.logo').attr('class', 'logo').addClass('rollIn');
 
+	setTimeout(function(){
+		$('.logo').css('border-radius', '0');
+	}, 1000);
+
 	var spanCount = 0;
 	var interval = setInterval(function(){
 		if (spanCount < $('.title span').length){
