@@ -26,7 +26,9 @@ $(window).bind("keydown", function(e) {
 		case 37:
 		case 65:
 			//Left
-			goLeft();
+			goLeft(function(){
+				$('.logo').css('border-radius', '0');
+			});
 			checkPage();
 			break;
 		case 38:
@@ -36,7 +38,9 @@ $(window).bind("keydown", function(e) {
 		case 39:
 		case 68:
 			//Right
-			goRight();
+			goRight(function(){
+				$('.logo').css('border-radius', '0');
+			});
 			checkPage();
 			break;
 		case 40:
@@ -50,12 +54,17 @@ $(window).bind("keydown", function(e) {
 
 var translateX = 0;
 var logoRotate = 0;
+var lastPage = ($('.pageSlider .page').length-1)*-100;
 $(document).on("click", ".leftArrow", function() {
-	goLeft();
+	goLeft(function(){
+		$('.logo').css('border-radius', '0');
+	});
 	checkPage();
 });
 $(document).on("click", ".rightArrow", function() {
-	goRight();
+	goRight(function(){
+		$('.logo').css('border-radius', '0');
+	});
 	checkPage();
 });
 	 
