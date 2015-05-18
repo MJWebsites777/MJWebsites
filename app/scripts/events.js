@@ -55,13 +55,13 @@ $(window).bind("keydown", function(e) {
 var translateX = 0;
 var logoRotate = 0;
 var lastPage = ($('.pageSlider .page').length-1)*-100;
-$(document).on("click", ".leftArrow", function() {
+$(document).on("click", ".goLeft", function() {
 	goLeft(function(){
 		$('.logo').css('border-radius', '0');
 	});
 	checkPage();
 });
-$(document).on("click", ".rightArrow", function() {
+$(document).on("click", ".goRight", function() {
 	goRight(function(){
 		$('.logo').css('border-radius', '0');
 	});
