@@ -18,6 +18,13 @@ $(document).ready(function(e) {
 			spanCount++;
 		}
 		else {
+			$('.goRight').css('display', '');
+			setTimeout(function(){
+				$('.goRight').css('opacity', '').addClass('arrowFlash');
+				setTimeout(function(){
+					$('.goRight').attr('class', 'goRight');
+				}, 700);
+			}, 50);
 			clearInterval(interval);
 		}
 	}, 1500);
