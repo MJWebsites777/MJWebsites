@@ -38,6 +38,10 @@ body {
   margin-top: calc(-25vw - 5px);
   z-index: 1;
 }
+
+.arrowFlash::before{
+  opacity: 1 !important;
+}
 .arrow {
   width: 10vh;
   height: 10vh;
@@ -72,7 +76,7 @@ body {
     left: 0;
     width: 1px;
     height: 100vh;
-    box-shadow: 0 0 250px 50px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 200px 50px rgba(255, 255, 255, 0.5);
     opacity: 0;
     @include transition(opacity 500ms ease-in-out);
   }
@@ -105,7 +109,7 @@ body {
     right: 0;
     width: 1px;
     height: 100vh;
-    box-shadow: 0 0 250px 50px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 200px 50px rgba(255, 255, 255, 0.5);
     opacity: 0;
     @include transition(opacity 500ms ease-in-out);
   }
@@ -154,12 +158,15 @@ body {
 
 /* Pages Styles */
 .pSliderResize {
-  @include transition(none);
+  //@include transition(none);
+
+}
+.pSliderTransformTransition {
+  @include transition(transform 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96));
 }
 .pageSlider {
   position: relative;
   width: 200vw;
-  @include transition(transform 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96));
 
   .page {
     position: absolute;
@@ -167,6 +174,7 @@ body {
     height: 100vh;
     //width: 33.33%;
     /*border: 5px solid #000;*/
+    top: 0;
 
     .container {
       width: 100vw;
@@ -178,10 +186,9 @@ body {
   /* Home Page */
   .homePage {
     //left: 33.33%; 
-    top: 0;
     background: url(../images/lake.jpg);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 90%;
     background-size: cover;
 
 
@@ -210,10 +217,18 @@ body {
   /* About Page */
   .aboutPage {
     left: 100vw;
-    top: 0;
     background: url(../images/cali.jpg);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 100%;
+    background-size: cover;
+  }
+
+  /* Portfolio Page */
+  .portfolioPage {
+    left: 200vw;
+    background: url(../images/barbed.jpg);
+    background-repeat: no-repeat;
+    background-position: center 20%;
     background-size: cover;
   }
 }
