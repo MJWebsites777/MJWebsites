@@ -5,7 +5,7 @@ function goLeft(callback){
 	$('.logo').attr('class', 'logo')/*.addClass('rollLeft')*/;
 	$('.logo').css({'transform': 'rotate('+logoRotate+'deg)', 'border-radius': '80px'});
  	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
- 	$('.pageSlider').css({
+ 	$('.pageSlider').addClass('pSliderTransformTransition').css({
 	  '-webkit-transform' : 'translateX('+translateX+'vw)',
 	  '-moz-transform'    : 'translateX('+translateX+'vw)',
 	  '-ms-transform'     : 'translateX('+translateX+'vw)',
@@ -13,7 +13,8 @@ function goLeft(callback){
 	  'transform'         : 'translateX('+translateX+'vw)'
 	})
 	.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd');
+	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
+	    .attr('class', 'pageSlider');
 	    if (callback){
 	    	callback();
 	    }
@@ -27,7 +28,7 @@ function goRight(callback){
 	$('.logo').attr('class', 'logo')/*.addClass('rollRight')*/;
 	$('.logo').css({'transform': 'rotate('+logoRotate+'deg)', 'border-radius': '80px'});
 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
-	$('.pageSlider').css({
+	$('.pageSlider').addClass('pSliderTransformTransition').css({
 	  '-webkit-transform' : 'translateX('+translateX+'vw)',
 	  '-moz-transform'    : 'translateX('+translateX+'vw)',
 	  '-ms-transform'     : 'translateX('+translateX+'vw)',
@@ -35,7 +36,8 @@ function goRight(callback){
 	  'transform'         : 'translateX('+translateX+'vw)'
 	})
 	.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd');
+	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
+	    .attr('class', 'pageSlider');
 	    if (callback){
 	    	callback();
 	    }
