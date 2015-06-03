@@ -2,9 +2,7 @@
   "name": "mjwebsites",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.4"
-  },
-  "devDependencies": {
+    "jquery": "~2.1.4",
     "nicescroll": "~3.6.0"
   }
 }
