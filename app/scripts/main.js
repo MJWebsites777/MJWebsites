@@ -4,6 +4,11 @@ var keyCode, lastPage, prevPage, currentProj = null;
 var currentPage = "Home";
 
 $(document).ready(function(e) {
+	$('.scroller').niceScroll({
+		autohidemode: 'leave',
+		railoffset: {top:0, left:15}
+	});
+
 	console.log(navigator.userAgent);
 	$('.logo').attr('class', 'logo').addClass('rollIn');
 
@@ -23,7 +28,7 @@ $(document).ready(function(e) {
 				$('.goRight').css('opacity', '').addClass('arrowFlash');
 				setTimeout(function(){
 					$('.goRight').attr('class', 'goRight');
-				}, 700);
+				}, 800);
 			}, 50);
 			clearInterval(interval);
 		}
