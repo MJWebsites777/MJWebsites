@@ -26,3 +26,14 @@
   animation: $args;
   -webkit-animation: $args;
 }
+
+@mixin rodusfont($wt, $str){
+  src: url('../fonts/rodussquare#{$wt}-webfont.eot');
+  src: url('../fonts/rodussquare#{$wt}-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/rodussquare#{$wt}-webfont.woff2') format('woff2'),
+       url('../fonts/rodussquare#{$wt}-webfont.woff') format('woff'),
+       url('../fonts/rodussquare#{$wt}-webfont.ttf') format('truetype'),
+       url('../fonts/rodussquare#{$wt}-webfont.svg#rodussquare#{$wt}#{$str}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

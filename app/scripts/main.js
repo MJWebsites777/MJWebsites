@@ -4,35 +4,32 @@ var keyCode, lastPage, prevPage, currentProj = null;
 var currentPage = "Home";
 
 $(document).ready(function(e) {
-	$('.scroller').niceScroll({
+	/*$('.scroller').niceScroll({
 		autohidemode: 'leave',
 		railoffset: {top:0, left:15}
-	});
+	});*/
 
 	console.log(navigator.userAgent);
-	$('.logo').attr('class', 'logo').addClass('rollIn');
-
-	setTimeout(function(){
-		$('.logo').css('border-radius', '0');
-	}, 1000);
+	setTimeout(function(){$('.logo').removeClass('logoPre');}, 10);
 
 	var spanCount = 0;
+	var homeSpans = $('.homePage .content span');
 	var interval = setInterval(function(){
-		if (spanCount < $('.title span').length){
-			$('.title span').eq(spanCount).css('opacity', '1');
+		if (spanCount < homeSpans.length){
+			homeSpans.eq(spanCount).css('opacity', '1');
 			spanCount++;
 		}
 		else {
-			$('.goRight').css('display', '');
+			$('.goDown').css('display', '');
 			setTimeout(function(){
-				$('.goRight').css('opacity', '').addClass('arrowFlash');
+				$('.goDown').css('opacity', '').addClass('arrowFlash');
 				setTimeout(function(){
-					$('.goRight').attr('class', 'goRight');
+					$('.goDown').attr('class', 'goDown');
 				}, 800);
 			}, 50);
 			clearInterval(interval);
 		}
-	}, 1500);
+	}, 1000);
 	setInterval(function(){ 
 		$('.currentpage').html("Current Page: "+currentPage); 
 		$('.lastpage').html("Last Page: "+lastPage); 

@@ -2,11 +2,11 @@
   /* Logo Roll In ------------------------------------------------- */
 @-webkit-keyframes rollin {
    0% { -webkit-transform: translateX(-500%) rotate(-720deg); box-shadow: none; border-radius: 80px; }
-  50% { -webkit-transform: translateX(0%) rotate(0deg); box-shadow: none; border-radius: 80px; }
-   100% { -webkit-transform: translateX(0%) rotate(0deg); box-shadow: 0 0 10px #000; border-radius: 0px;}
+  50% { -webkit-transform: translateX(0%) rotate(45deg); box-shadow: none; border-radius: 80px; }
+   100% { -webkit-transform: translateX(0%) rotate(45deg); box-shadow: 0 3px 10px #000; border-radius: 0px;}
 }
 @keyframes rollin {
    0% { transform: translateX(-500%) rotate(-720deg); box-shadow: 0 0 0 rgba(255,255,255,0.00); border-radius: 80px; }
-  50% { transform: translateX(0%) rotate(0deg); box-shadow: 0 0 0 rgba(255,255,255,0.00); border-radius: 80px; }
-   100% { transform: translateX(0%) rotate(0deg); box-shadow: 0 0 10px #000; border-radius: 0px; }
+  50% { transform: translateX(0%) rotate(45deg); box-shadow: 0 0 0 rgba(255,255,255,0.00); border-radius: 80px; }
+   100% { transform: translateX(0%) rotate(45deg); box-shadow: 0 3px 10px #000; border-radius: 0px; }
 }

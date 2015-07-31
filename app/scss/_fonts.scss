@@ -10,3 +10,19 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Rodus100';
+    @include rodusfont(100, 'thin');
+}
+@font-face {
+    font-family: 'Rodus300';
+    @include rodusfont(300, 'thin');
+}
+@font-face {
+    font-family: 'Rodus500';
+    @include rodusfont(500, 'thin');
+}
+@font-face {
+    font-family: 'Rodus700';
+    @include rodusfont(700, 'bold');
+}

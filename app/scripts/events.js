@@ -5,9 +5,12 @@ onresize=onload=function() {
 	$('.monitoring').html("<span class=\"winFocus\">Window Focus: true</span><br />Width: "+winWidth+
 		"px<br />Height: "+winHeight+"px<br /><span class=\"ctrlDown\">isCTRLDown: "+isCtrlDown+
 		"</span><br /><span class=\"keycode\">KeyCode: "+keyCode+
-		"</span><br /><span class=\"lastpage\">Last Page: "+lastPage+
-		"</span><br /><span class=\"currentpage\">Current Page: "+currentPage+
-		"</span><br /><span class=\"xCoord\">Mouse X: null</span><br /><span class=\"yCoord\">Mouse Y: null</span><br /><span class=\"elemHover\">Mouse Over Element: null</span><br /><span class=\"scrolltop\">ST: null, OS: null</span>");
+		"</span><br /><span class=\"lastPage\">Last Page: "+lastPage+
+		"</span><br /><span class=\"currentPage\">Current Page: "+currentPage+
+		"</span><br /><span class=\"xCoord\">Mouse X: null</span><br />"+
+		"<span class=\"yCoord\">Mouse Y: null</span><br />"+
+		"<span class=\"elemHover\">Mouse Over Element: null</span><br />"+
+		"<span class=\"scrolltop\">ST: null, OS: null</span>");
 }
 
 $(window).bind("keydown", function(e) {
@@ -25,44 +28,46 @@ $(window).bind("keydown", function(e) {
 	switch (key) {
 		case 37:
 		case 65:
-			//Left
-			goLeft(function(){
-				$('.logo').css('border-radius', '0');
-			});
-			checkPage();
+			//Left			
 			break;
 		case 38:
 		case 87:
 			//Up
-			break;
-		case 39:
-		case 68:
-			//Right
-			goRight(function(){
+			goUp(function(){
 				$('.logo').css('border-radius', '0');
 			});
 			checkPage();
 			break;
+		case 39:
+		case 68:
+			//Right
+			break;
 		case 40:
 		case 83:
 			//Down
+			goDown(function(){
+				$('.logo').css('border-radius', '0');
+			});
+			checkPage();
 			break;
 		default:
 			break;
 	}
 });
 
-var translateX = 0;
+var translateY = 0;
 var logoRotate = 0;
 var lastPage = ($('.pageSlider .page').length-1)*-100;
-$(document).on("click", ".goLeft", function() {
-	goLeft(function(){
+$(document).on("click", ".goUp", function() {
+	if (pageChanging) return;
+	goUp(function(){
 		$('.logo').css('border-radius', '0');
 	});
 	checkPage();
 });
-$(document).on("click", ".goRight", function() {
-	goRight(function(){
+$(document).on("click", ".goDown", function() {
+	if (pageChanging) return;
+	goDown(function(){
 		$('.logo').css('border-radius', '0');
 	});
 	checkPage();
