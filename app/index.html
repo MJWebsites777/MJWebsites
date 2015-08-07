@@ -9,6 +9,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,6 +24,7 @@
     <div class="lake" style="opacity:1"></div>
     <div class="cali"></div>
     <div class="barbed"></div>
+    <div class="shoreline"></div>
   </div>
   <div class="nav">
     <div class="home"></div>
@@ -36,12 +38,13 @@
   <div class="goDown" style="opacity: 0;display: none;">
     <div class="downArrow arrow"></div>
   </div>
-  <div class="logo logoPre"><div class="profile"></div></div>
   <div class="monitoring" style="display: none;"></div>
   <div class="pageSlider">
     <div class="homePage page">
       <div class="overlay"></div>
       <div class="container">
+        <div class="diamond"></div><div class="diamond"></div><div class="diamond"></div>
+        <div class="logo logoPre"><div class="profile"></div></div>
         <div class="content">
           <span class="name">Matthew Johnson</span>
           <br>
@@ -49,13 +52,23 @@
         </div>
       </div>
     </div>
-    <div class="aboutPage page">
-      <div class="overlay"></div>
-      <div class="container"></div>      
-    </div>
     <div class="portfolioPage page">
       <div class="overlay"></div>
-      <div class="container"></div> 
+      <div class="container">
+        <div class="content" style="opacity: 0;"></div>
+      </div> 
+    </div>
+    <div class="aboutPage page">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content" style="opacity: 0;"></div>
+      </div>      
+    </div>
+    <div class="contactPage page">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content" style="opacity: 0;"></div>
+      </div>      
     </div>
   </div>
   <!--<div class="arrows">
@@ -83,6 +96,7 @@
   <!-- endbuild -->
 
   <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/pages.js"></script>
   <script src="scripts/functions.js"></script>
   <script src="scripts/events.js"></script>
   <script src="scripts/main.js"></script>
