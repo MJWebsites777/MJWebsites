@@ -1,7 +1,9 @@
 var winFocus = true;
 var isCtrlDown, disableGoto, pageChanging, portIsScroll = false;
-var keyCode, lastPage, prevPage, currentProj = null;
-var currentPage = "Home";
+var keyCode, currentProj = null;
+var pageCount = $('.page').length;
+var prevPage = -1;
+var currentPage = 0;
 
 $(document).ready(function(e) {
 	/*$('.scroller').niceScroll({
@@ -10,7 +12,8 @@ $(document).ready(function(e) {
 	});*/
 
 	console.log(navigator.userAgent);
-	setTimeout(function(){$('.logo').removeClass('logoPre');}, 10);
+
+	$('.logo').removeClass('logoPre');
 
 	var spanCount = 0;
 	var homeSpans = $('.homePage .content span');
@@ -28,11 +31,13 @@ $(document).ready(function(e) {
 				}, 800);
 			}, 50);
 			clearInterval(interval);
+			animateDiamonds();
 		}
 	}, 1000);
+
 	setInterval(function(){ 
-		$('.currentpage').html("Current Page: "+currentPage); 
-		$('.lastpage').html("Last Page: "+lastPage); 
+		$('.currentPage').html("Current Page: "+currentPage); 
+		$('.pageCount').html("Page Count: "+pageCount); 
 		if (document.hasFocus()) winFocus = true; 
 		else winFocus = false; 
 		$('.winFocus').html("Window Focus: "+winFocus); 
