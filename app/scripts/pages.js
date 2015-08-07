@@ -24,7 +24,6 @@ function Pages() {
 	    //$('.page').eq(currentPage).find('.content').css('opacity', '');
 
 		//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
-		pages.visit[currentPage]();
 		pageChanging = true;
 		$('.pageSlider').addClass('pSliderTransformTransition')
 		.transform('translateY('+translateY+'vh)')
@@ -32,7 +31,8 @@ function Pages() {
 		    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
 		    	.attr('class', 'pageSlider');
 		    pageChanging = false;
-		    pages.leave[prevPage]();
+		    self.visit[currentPage]();
+		    self.leave[prevPage]();
 		    if (callback){
 		    	callback();
 		    }
@@ -63,6 +63,8 @@ function Pages() {
 		    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
 		    	.attr('class', 'pageSlider');
 		    pageChanging = false;
+		    self.visit[currentPage]();
+		    self.leave[prevPage]();
 		    if (callback){
 		    	callback();
 		    }
@@ -81,7 +83,7 @@ function Pages() {
 	};
 
 	self.leave[0] = function(){
-		$('.diamond').removeClass('anim-diamonds');
+		$('.diamond').removeClass('anim-diamond');
 	};
 	self.leave[1] = function(){
 	};
