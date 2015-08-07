@@ -1,66 +1,5 @@
-var bgIndex = 0;
-var bg = $('.backgrounds div');
-function goUp(callback){
-	if (translateY == 0) return;
-	translateY += 100;
-	logoRotate += -720;
-	$('.logo').attr('class', 'logo')/*.addClass('rollLeft')*/;
-	if (translateY === 0){
-		$('.logo').transform('');
-	}
-
-	if (bgIndex > 0){
-        bg.eq(bgIndex).css('opacity', '');
-        bgIndex--;
-        bg.eq(bgIndex).css('opacity', '1');
-    }
-
- 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
- 	pageChanging = true;
- 	$('.pageSlider').addClass('pSliderTransformTransition')
- 	.transform('translateY('+translateY+'vh)')
-	.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
-	    	.attr('class', 'pageSlider');
-	    pageChanging = false;
-	    if (callback){
-	    	callback();
-	    }
-	});
-}
-
-function goDown(callback){
-	if (translateY == lastPage) return;
-	translateY += -100;
-	logoRotate += 720;
-	$('.logo').attr('class', 'logo')/*.addClass('rollRight')*/;
-	if (translateY === -100){
-		$('.logo').transform('rotate(45deg) scale(0.75)');
-	}
-
-	if (bgIndex < 2){
-        bg.eq(bgIndex).css('opacity', '');
-        bgIndex++;
-        bg.eq(bgIndex).css('opacity', '1');
-    }
-
-	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
-	pageChanging = true;
-	$('.pageSlider').addClass('pSliderTransformTransition')
-	.transform('translateY('+translateY+'vh)')
-	.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-	    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
-	    	.attr('class', 'pageSlider');
-	    pageChanging = false;
-	    if (callback){
-	    	callback();
-	    }
-	});
-
-}
-
 function checkPage(){
-	if (translateY == 0){
+	if (currentPage == 0){
 		$('.goUp').css('opacity', '0');
 		$('.goDown').css('display', '');
 		setTimeout(function(){
@@ -70,7 +9,7 @@ function checkPage(){
 			$('.goUp').css('display', 'none');
 		}, 500);
 	}
-	else if (translateY == lastPage){
+	else if (currentPage == (pageCount-1)){
 		$('.goDown').css('opacity', '0');
 		$('.goUp').css('display', '');
 		setTimeout(function(){
@@ -88,6 +27,22 @@ function checkPage(){
 			$('.goUp').css('opacity', '');
 		}, 50);
 	}
+
+	$('.currentPage').html("Current Page: "+currentPage); 
+}
+
+function animateDiamonds(){
+	var i = 0;
+	var diaCount = $('.diamond').length;
+	var interval = setInterval(function(){
+	    if (i < diaCount){
+	      $('.diamond').eq(i).addClass('anim-diamond');
+	      i++;
+	    }
+	    else {
+	      clearInterval(interval);
+	    }
+	}, 1000);
 }
 
 (function($) { 
