@@ -5,7 +5,7 @@ onresize=onload=function() {
 	$('.monitoring').html("<span class=\"winFocus\">Window Focus: true</span><br />Width: "+winWidth+
 		"px<br />Height: "+winHeight+"px<br /><span class=\"ctrlDown\">isCTRLDown: "+isCtrlDown+
 		"</span><br /><span class=\"keycode\">KeyCode: "+keyCode+
-		"</span><br /><span class=\"lastPage\">Last Page: "+lastPage+
+		"</span><br /><span class=\"pageCount\">Page Count: "+pageCount+
 		"</span><br /><span class=\"currentPage\">Current Page: "+currentPage+
 		"</span><br /><span class=\"xCoord\">Mouse X: null</span><br />"+
 		"<span class=\"yCoord\">Mouse Y: null</span><br />"+
@@ -33,7 +33,7 @@ $(window).bind("keydown", function(e) {
 		case 38:
 		case 87:
 			//Up
-			goUp(function(){
+			pages.goUp(function(){
 				$('.logo').css('border-radius', '0');
 			});
 			checkPage();
@@ -45,7 +45,7 @@ $(window).bind("keydown", function(e) {
 		case 40:
 		case 83:
 			//Down
-			goDown(function(){
+			pages.goDown(function(){
 				$('.logo').css('border-radius', '0');
 			});
 			checkPage();
@@ -57,18 +57,17 @@ $(window).bind("keydown", function(e) {
 
 var translateY = 0;
 var logoRotate = 0;
-var lastPage = ($('.pageSlider .page').length-1)*-100;
 $(document).on("click", ".goUp", function() {
 	if (pageChanging) return;
-	goUp(function(){
-		$('.logo').css('border-radius', '0');
+	pages.goUp(function(){
+		//$('.logo').css('border-radius', '0');
 	});
 	checkPage();
 });
 $(document).on("click", ".goDown", function() {
 	if (pageChanging) return;
-	goDown(function(){
-		$('.logo').css('border-radius', '0');
+	pages.goDown(function(){
+		//$('.logo').css('border-radius', '0');
 	});
 	checkPage();
 });
@@ -79,27 +78,6 @@ $(window).bind("keyup", function(e) {
 	if (e.keyCode == 17)
 		isCtrlDown = false;
 	$('.ctrlDown').html("isCTRLDown: "+isCtrlDown);
-	var key = e.keyCode;
-	switch (key) {
-		case 37:
-		case 65:
-			//if ($('.leftArrow').css("opacity")!="0.25") {$('.leftArrow').css("opacity", "0.5");}
-			break;
-		case 38:
-		case 87:
-			//if ($('.upArrow').css("opacity")!="0.25") {$('.upArrow').css("opacity", "0.5");}
-			break;
-		case 39:
-		case 68:
-			//if ($('.rightArrow').css("opacity")!="0.25") {$('.rightArrow').css("opacity", "0.5");}
-			break;
-		case 40:
-		case 83:
-			//if ($('.downArrow').css("opacity")!="0.25") {$('.downArrow').css("opacity", "0.5");}
-			break;
-		default:
-			break;
-	}
 });
 
 $('html').on("mousemove", function(e) {
