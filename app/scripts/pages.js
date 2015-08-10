@@ -1,3 +1,10 @@
+var winFocus = true;
+var isCtrlDown, disableGoto, pageChanging = false;
+var keyCode, currentProj = null;
+var pageCount = $('.page').length;
+var prevPage = -1;
+var currentPage = 0;
+
 function Pages() {
 	var self = this;
 	var bgIndex = 0;
@@ -7,7 +14,7 @@ function Pages() {
 	self.leave = [];
 
 	self.goDown = function(callback){
-		if (currentPage == pageCount) return;
+		if (currentPage == (pageCount-1)) return;
 		translateY += -100;
 		logoRotate += 720;
 
@@ -20,6 +27,7 @@ function Pages() {
 	    prevPage = currentPage;
 	    currentPage++;
 	    pageName = $('.page').eq(currentPage).attr('class').replace(' page', '');
+	    checkPage();
 	    //$('.page').eq(prevPage).find('.content').css('opacity', '0');
 	    //$('.page').eq(currentPage).find('.content').css('opacity', '');
 
@@ -52,6 +60,7 @@ function Pages() {
 	    prevPage = currentPage;
 	    currentPage--;
 	    pageName = $('.page').eq(currentPage).attr('class').replace(' page', '');
+	    checkPage();
 	    //$('.page').eq(prevPage).find('.content').css('opacity', '0');
 	    //$('.page').eq(currentPage).find('.content').css('opacity', '');
 
