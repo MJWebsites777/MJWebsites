@@ -1,3 +1,4 @@
+// Browser reload/resize event
 onresize=onload=function() {
 	var winWidth = $(window).innerWidth();
 	var winHeight = $(window).innerHeight();		
@@ -13,6 +14,7 @@ onresize=onload=function() {
 		"<span class=\"scrolltop\">ST: null, OS: null</span>");
 }
 
+// Key down event
 $(window).bind("keydown", function(e) {
 	keyCode = "DOWN - "+e.keyCode;
 	$('.keycode').html("KeyCode: "+keyCode);
@@ -36,7 +38,6 @@ $(window).bind("keydown", function(e) {
 			pages.goUp(function(){
 				$('.logo').css('border-radius', '0');
 			});
-			checkPage();
 			break;
 		case 39:
 		case 68:
@@ -48,30 +49,12 @@ $(window).bind("keydown", function(e) {
 			pages.goDown(function(){
 				$('.logo').css('border-radius', '0');
 			});
-			checkPage();
 			break;
 		default:
 			break;
 	}
 });
-
-var translateY = 0;
-var logoRotate = 0;
-$(document).on("click", ".goUp", function() {
-	if (pageChanging) return;
-	pages.goUp(function(){
-		//$('.logo').css('border-radius', '0');
-	});
-	checkPage();
-});
-$(document).on("click", ".goDown", function() {
-	if (pageChanging) return;
-	pages.goDown(function(){
-		//$('.logo').css('border-radius', '0');
-	});
-	checkPage();
-});
-	 
+// Key up event
 $(window).bind("keyup", function(e) {
 	keyCode = "UP - "+e.keyCode;
 	$('.keycode').html("KeyCode: "+keyCode);
@@ -80,6 +63,41 @@ $(window).bind("keyup", function(e) {
 	$('.ctrlDown').html("isCTRLDown: "+isCtrlDown);
 });
 
+// Arrow click event
+var translateY = 0;
+var logoRotate = 0;
+$(document).on("click", ".goUp", function() {
+	if (pageChanging) return;
+	pages.goUp(function(){
+		//$('.logo').css('border-radius', '0');
+	});
+});
+$(document).on("click", ".goDown", function() {
+	if (pageChanging) return;
+	pages.goDown(function(){
+		//$('.logo').css('border-radius', '0');
+	});
+});
+	 
+// Mouse scroll event
+$('.pageSlider').bind('mousewheel DOMMouseScroll', function(e){
+	e.preventDefault();
+	if (pageChanging) return;
+	var delta = 0;
+	if (e.type == 'mousewheel') {
+    	delta = e.originalEvent.wheelDelta;
+		console.log("w"+delta);
+		if (delta<0) pages.goDown(); else pages.goUp();
+	}
+	else if (e.type == 'DOMMouseScroll') {
+    	delta = e.originalEvent.detail;
+		console.log("d"+delta);
+		if (delta<0) pages.goDown(); else pages.goUp();
+	}
+	
+});
+
+// Mouse move event
 $('html').on("mousemove", function(e) {
 	var x=e.clientX;
 	var y=e.clientY;
