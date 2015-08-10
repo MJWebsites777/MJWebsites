@@ -1,10 +1,3 @@
-var winFocus = true;
-var isCtrlDown, disableGoto, pageChanging, portIsScroll = false;
-var keyCode, currentProj = null;
-var pageCount = $('.page').length;
-var prevPage = -1;
-var currentPage = 0;
-
 $(document).ready(function(e) {
 	/*$('.scroller').niceScroll({
 		autohidemode: 'leave',
