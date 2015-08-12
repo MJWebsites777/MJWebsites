@@ -21,6 +21,7 @@ $(document).ready(function(e) {
 				$('.goDown').css('opacity', '').addClass('arrowFlash');
 				setTimeout(function(){
 					$('.goDown').attr('class', 'goDown');
+					siteLoading = false;
 				}, 800);
 			}, 50);
 			clearInterval(interval);
