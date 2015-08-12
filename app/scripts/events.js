@@ -80,21 +80,13 @@ $(document).on("click", ".goDown", function() {
 });
 	 
 // Mouse scroll event
-$('.pageSlider').bind('mousewheel DOMMouseScroll', function(e){
+$('.pageSlider').on('DOMMouseScroll mousewheel', function(e){
 	e.preventDefault();
-	if (pageChanging) return;
-	var delta = 0;
-	if (e.type == 'mousewheel') {
-    	delta = e.originalEvent.wheelDelta;
-		console.log("w"+delta);
-		if (delta<0) pages.goDown(); else pages.goUp();
-	}
-	else if (e.type == 'DOMMouseScroll') {
-    	delta = e.originalEvent.detail;
-		console.log("d"+delta);
-		if (delta<0) pages.goDown(); else pages.goUp();
-	}
-	
+	if (pageChanging || siteLoading) return;
+	//var delta = 0;
+	var delta = parseInt(e.originalEvent.wheelDelta || -e.originalEvent.detail);
+	//console.log('delta: '+delta);
+	if (delta<0) pages.goDown(); else pages.goUp();
 });
 
 // Mouse move event
