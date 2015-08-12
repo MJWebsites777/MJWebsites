@@ -1,4 +1,4 @@
-var winFocus = true;
+var winFocus, siteLoading = true;
 var isCtrlDown, disableGoto, pageChanging = false;
 var keyCode, currentProj = null;
 var pageCount = $('.page').length;
