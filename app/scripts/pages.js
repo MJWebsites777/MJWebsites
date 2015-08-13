@@ -10,8 +10,6 @@ function Pages() {
 	var bgIndex = 0;
 	var bg = $('.backgrounds div');
 	var pageName = null;
-	self.visit = [];
-	self.leave = [];
 
 	self.goDown = function(callback){
 		if (currentPage == (pageCount-1)) return;
@@ -80,25 +78,40 @@ function Pages() {
 		});
 	};
 
-	self.visit[0] = function(){
-		animateDiamonds();
+	self.visit = {
+		0: function(){
+			animateDiamonds();
+		},
+		1: function(){
+			$('.portfolioPage .content').css('opacity', '');
+		},
+		2: function(){
+			return;
+		},	
+		3: function(){
+			return;
+		},
+		'default': function(){
+			return;
+		}
 	};
-	self.visit[1] = function(){
 
-	};
-	self.visit[2] = function(){
-	};
-	self.visit[3] = function(){
-	};
-
-	self.leave[0] = function(){
-		$('.diamond').removeClass('anim-diamond');
-	};
-	self.leave[1] = function(){
-	};
-	self.leave[2] = function(){
-	};
-	self.leave[3] = function(){
+	self.leave = {
+		0: function(){
+			$('.diamond').removeClass('anim-diamond');
+		},
+		1: function(){
+			return;
+		},
+		2: function(){
+			return;
+		},
+		3: function(){
+			return;
+		},
+		'default': function(){
+			return;
+		}
 	};
 }
 var pages = new Pages();
