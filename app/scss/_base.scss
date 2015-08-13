@@ -72,14 +72,14 @@ body {
   top: 50vh;
   left: 50vw;
   margin-top: calc(-2.5vh - 1px);
-  margin-left: calc(-1.2vw);
+  margin-left: calc(-2.5vh - 1px);
   opacity: 1;
   //@include transition(opacity 500ms ease-in-out);
   //cursor: pointer;
 }
 .goUp {
   position: fixed;
-  height: 20vh;
+  height: 15vh;
   width: 100vw;
   opacity: 0.65;
   @include transition(opacity 500ms ease-in-out);
@@ -115,7 +115,7 @@ body {
   position: fixed;
   right: 0;
   bottom: 0;
-  height: 20vh;
+  height: 15vh;
   width: 100vw;
   opacity: 0.65;
   @include transition(opacity 700ms $quad-cubic-bezier);
@@ -245,6 +245,22 @@ body {
   /* Portfolio Page */
   .portfolioPage {
     top: 100vh;
+
+    .content {
+      position: relative;
+      top: 15vh;
+      font-family: Rodus300;
+      color: #fff;
+      text-shadow: 0 3px 3px #000;
+
+      .portTitle {
+        font-size: 5.5vw;
+      }
+      .portTag {
+        font-family: Rodus100;
+        font-size: 2vw;
+      }
+    }
   }
 
   /* About Page */
