@@ -1,10 +1,3 @@
-var winFocus, siteLoading = true;
-var isCtrlDown, disableGoto, pageChanging = false;
-var keyCode, currentProj = null;
-var pageCount = $('.page').length;
-var prevPage = -1;
-var currentPage = 0;
-
 function Pages() {
 	var self = this;
 	var bgIndex = 0;
@@ -12,7 +5,7 @@ function Pages() {
 	var pageName = null;
 
 	self.goDown = function(callback){
-		if (currentPage == (pageCount-1)) return;
+		if (currentPage == (pageCount-1) || viewingProject) return;
 		translateY += -100;
 		logoRotate += 720;
 
@@ -31,21 +24,17 @@ function Pages() {
 
 		//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
 		pageChanging = true;
-		$('.pageSlider').addClass('pSliderTransformTransition')
-		.transform('translateY('+translateY+'vh)')
-		.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-		    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
-		    	.attr('class', 'pageSlider');
-		    pageChanging = false;
+		transformPageSlider('translateY('+translateY+'vh)', function(){
+	 		pageChanging = false;
 		    self.visit[currentPage]();
 		    self.leave[prevPage]();
 		    if (callback){
 		    	callback();
 		    }
-		});
+	 	});
 	};
 	self.goUp = function(callback){
-		if (currentPage == 0) return;
+		if (currentPage == 0 || viewingProject) return;
 		translateY += 100;
 		logoRotate += -720;
 
@@ -64,52 +53,58 @@ function Pages() {
 
 	 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
 	 	pageChanging = true;
-	 	$('.pageSlider').addClass('pSliderTransformTransition')
-	 	.transform('translateY('+translateY+'vh)')
-		.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-		    $(this).off('transitionend webkitTransitionEnd oTransitionEnd')
-		    	.attr('class', 'pageSlider');
-		    pageChanging = false;
+	 	transformPageSlider('translateY('+translateY+'vh)', function(){
+	 		pageChanging = false;
 		    self.visit[currentPage]();
 		    self.leave[prevPage]();
 		    if (callback){
 		    	callback();
 		    }
-		});
+	 	});
+	};
+	self.goRight = function(callback) {
+		transformPageSlider('translateY('+translateY+'vh)', callback);
+
+	};
+	self.goLeft = function(callback) {
+		transformPageSlider('translateY('+translateY+'vh) translateX(100vw)', callback);
 	};
 
 	self.visit = {
-		0: function(){
+		0: function(){ // Home Page
 			animateDiamonds();
 		},
-		1: function(){
+		1: function(){ // Portfolio Page
+			
 			$('.portfolioPage .content').css('opacity', '');
 		},
-		2: function(){
+		2: function(){ // About Page
 			return;
 		},	
-		3: function(){
+		3: function(){ // Contact Page
 			return;
 		},
 		'default': function(){
+			console.log('default visit');
 			return;
 		}
 	};
 
 	self.leave = {
-		0: function(){
+		0: function(){ // Home Page
 			$('.diamond').removeClass('anim-diamond');
 		},
-		1: function(){
+		1: function(){ // Portfolio Page
 			return;
 		},
-		2: function(){
+		2: function(){ // About Page
 			return;
 		},
-		3: function(){
+		3: function(){ // Contact Page
 			return;
 		},
 		'default': function(){
+			console.log('default leave');
 			return;
 		}
 	};
