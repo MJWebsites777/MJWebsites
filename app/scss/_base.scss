@@ -201,10 +201,8 @@ body {
       //box-shadow: 0 0 1px #000;
       //background-color: $rgba-lightblue-75;
       position: absolute;
-      left: 50vw;
-      margin-left: -35vw;
-      top: 50vh;
-      margin-top: -50vh;
+      left: 15vw;
+      top: 0;
       z-index: 1;
 
       .content {
@@ -245,20 +243,68 @@ body {
   /* Portfolio Page */
   .portfolioPage {
     top: 100vh;
+    left: -100vw;
+    width: 200vw;
 
-    .content {
-      position: relative;
-      top: 15vh;
-      font-family: Rodus300;
-      color: #fff;
-      text-shadow: 0 3px 3px #000;
+    .overlay {
+      width: 200vw;
+    }
+    .container {
+      left: 115vw;
 
-      .portTitle {
-        font-size: 5.5vw;
+      .content {
+        position: relative;
+        top: 15vh;
+        font-family: Rodus300;
+        color: #fff;
+        text-shadow: 0 3px 3px #000;
+
+        .portTitle {
+          font-size: 10vh;
+        }
+        .portTag {
+          font-family: Rodus100;
+          font-size: 3.5vh;
+        }
+        .projects {
+          position: relative;
+          margin-top: 5vh;
+
+          .project {
+            position: relative;
+            width: 45vh;
+            height: 45vh;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.75;
+            @include transition(opacity 300ms $quad-cubic-bezier);
+            cursor: pointer;
+          }
+            .project:hover {
+              opacity: 1;
+            }
+        }
       }
-      .portTag {
-        font-family: Rodus100;
-        font-size: 2vw;
+    }
+    .projViewer {
+      position: absolute;
+      display: inline-block;
+      width: 70vw;
+      height: 100vh;
+      left: 0vw;
+      top: 0;
+      
+      > div {
+        position: absolute;
+        opacity: 0;
+        @include transition(opacity 500ms $quad-cubic-bezier);
+      }
+      .jgp {
+
+      }
+      .wefc {
+
       }
     }
   }

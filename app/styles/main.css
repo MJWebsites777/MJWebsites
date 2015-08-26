@@ -234,10 +234,8 @@ body {
       width: 70vw;
       height: 100vh;
       position: absolute;
-      left: 50vw;
-      margin-left: -35vw;
-      top: 50vh;
-      margin-top: -50vh;
+      left: 15vw;
+      top: 0;
       z-index: 1; }
       .pageSlider .page .container .content {
         -webkit-transition: opacity 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
@@ -269,18 +267,58 @@ body {
       text-shadow: 0 3px 3px #000;
       font-family: Rodus100; }
   .pageSlider .portfolioPage {
-    top: 100vh; }
-    .pageSlider .portfolioPage .content {
-      position: relative;
-      top: 15vh;
-      font-family: Rodus300;
-      color: #fff;
-      text-shadow: 0 3px 3px #000; }
-      .pageSlider .portfolioPage .content .portTitle {
-        font-size: 5.5vw; }
-      .pageSlider .portfolioPage .content .portTag {
-        font-family: Rodus100;
-        font-size: 2vw; }
+    top: 100vh;
+    left: -100vw;
+    width: 200vw; }
+    .pageSlider .portfolioPage .overlay {
+      width: 200vw; }
+    .pageSlider .portfolioPage .container {
+      left: 115vw; }
+      .pageSlider .portfolioPage .container .content {
+        position: relative;
+        top: 15vh;
+        font-family: Rodus300;
+        color: #fff;
+        text-shadow: 0 3px 3px #000; }
+        .pageSlider .portfolioPage .container .content .portTitle {
+          font-size: 10vh; }
+        .pageSlider .portfolioPage .container .content .portTag {
+          font-family: Rodus100;
+          font-size: 3.5vh; }
+        .pageSlider .portfolioPage .container .content .projects {
+          position: relative;
+          margin-top: 5vh; }
+          .pageSlider .portfolioPage .container .content .projects .project {
+            position: relative;
+            width: 45vh;
+            height: 45vh;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.75;
+            -webkit-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            -moz-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            -ms-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            -o-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+            cursor: pointer; }
+          .pageSlider .portfolioPage .container .content .projects .project:hover {
+            opacity: 1; }
+    .pageSlider .portfolioPage .projViewer {
+      position: absolute;
+      display: inline-block;
+      width: 70vw;
+      height: 100vh;
+      left: 0vw;
+      top: 0; }
+      .pageSlider .portfolioPage .projViewer > div {
+        position: absolute;
+        opacity: 0;
+        -webkit-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+        -moz-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+        -ms-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+        -o-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
+        transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96); }
   .pageSlider .aboutPage {
     top: 200vh; }
     .pageSlider .aboutPage .scroller {
