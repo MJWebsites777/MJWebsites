@@ -6,7 +6,7 @@ var CONTACT_PAGE = 3;
 //===================================
 
 var winFocus, siteLoading = true;
-var isCtrlDown, disableGoto, pageChanging = false;
+var isCtrlDown, disableGoto, pageChanging, viewingProject = false;
 var keyCode, currentProj = null;
 var pageCount = $('.page').length;
 var prevPage = -1;
