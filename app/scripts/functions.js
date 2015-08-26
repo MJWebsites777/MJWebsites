@@ -7,7 +7,7 @@ function checkPage(){
 		}, 50);
 		setTimeout(function(){
 			$('.goUp').css('display', 'none');
-		}, 500);
+		}, 700);
 	}
 	else if (currentPage == (pageCount-1)){
 		$('.goDown').css('opacity', '0');
@@ -17,7 +17,7 @@ function checkPage(){
 		}, 50);
 		setTimeout(function(){
 			$('.goDown').css('display', 'none');
-		}, 500);
+		}, 700);
 	}
 	else {
 		$('.goDown').css('display', '');
@@ -43,6 +43,17 @@ function animateDiamonds(){
 	      clearInterval(interval);
 	    }
 	}, 1000);
+}
+
+function transformPageSlider(transform, callback){
+	$('.pageSlider').addClass('pSliderTransformTransition')
+ 		.transform(transform)
+ 		.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
+	    	$(this).attr('class', 'pageSlider');
+	    	if (callback){
+		    	callback();
+		    }
+		});
 }
 
 (function($) { 
