@@ -78,6 +78,18 @@ $(document).on("click", ".goDown", function() {
 		//$('.logo').css('border-radius', '0');
 	});
 });
+
+// Project click event
+$(document).on("click", ".container .project", function() {
+	if (pageChanging || currentPage != PORTFOLIO_PAGE) return;
+	$('.goDown, .goUp').css('opacity', '0');
+	setTimeout(function(){
+		$('.goDown, .goUp').css('display', 'none');
+	}, 700);
+	pages.goLeft(function(){
+		viewingProject = true;
+	});
+});
 	 
 // Mouse scroll event
 $('.pageSlider').on('DOMMouseScroll mousewheel', function(e){
