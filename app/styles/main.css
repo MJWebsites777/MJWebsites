@@ -30,7 +30,7 @@
   src: url("../fonts/rodussquare700-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rodussquare700-webfont.woff2") format("woff2"), url("../fonts/rodussquare700-webfont.woff") format("woff"), url("../fonts/rodussquare700-webfont.ttf") format("truetype"), url("../fonts/rodussquare700-webfont.svg#rodussquare700bold") format("svg");
   font-weight: normal;
   font-style: normal; }
-* {
+h1, h2, h3, h4, h5, h6, p, span, div, article, header, footer {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -40,14 +40,6 @@
 html {
   text-align: center;
   height: 100%; }
-
-html:before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: ""; }
 
 body {
   margin: 0;
@@ -215,11 +207,7 @@ body {
 
 .pageSlider {
   position: relative;
-  height: 200vh;
-  /* Home Page */
-  /* Portfolio Page */
-  /* About Page */
-  /* Contact Page */ }
+  height: 200vh; }
   .pageSlider .page {
     position: absolute;
     width: 100vw;
@@ -266,85 +254,57 @@ body {
     .pageSlider .homePage .content .title {
       text-shadow: 0 3px 3px #000;
       font-family: Rodus100; }
-  .pageSlider .portfolioPage {
-    top: 100vh;
-    left: -100vw;
-    width: 200vw; }
-    .pageSlider .portfolioPage .overlay {
-      width: 200vw; }
-    .pageSlider .portfolioPage .container {
-      left: 115vw; }
-      .pageSlider .portfolioPage .container .content {
+  .pageSlider .jgp {
+    top: 100vh; }
+    .pageSlider .jgp .overlay {
+      width: 100vw; }
+    .pageSlider .jgp .container {
+      color: #fff;
+      font-family: Rodus300; }
+      .pageSlider .jgp .container .header {
+        position: absolute;
+        width: 100%;
+        top: 10vh; }
+        .pageSlider .jgp .container .header .projTitle {
+          position: relative;
+          font-size: 6vh;
+          text-shadow: 0 3px 3px #000; }
+        .pageSlider .jgp .container .header .projStatus {
+          position: relative;
+          display: block;
+          margin-top: 1vh;
+          font-size: 2vh;
+          text-shadow: 0 2px 1px #000; }
+      .pageSlider .jgp .container .content {
         position: relative;
         top: 15vh;
-        font-family: Rodus300;
-        color: #fff;
         text-shadow: 0 3px 3px #000; }
-        .pageSlider .portfolioPage .container .content .portTitle {
-          font-size: 10vh; }
-        .pageSlider .portfolioPage .container .content .portTag {
-          font-family: Rodus100;
-          font-size: 3.5vh; }
-        .pageSlider .portfolioPage .container .content .projects {
-          position: relative;
-          margin-top: 5vh; }
-          .pageSlider .portfolioPage .container .content .projects .project {
-            position: relative;
-            width: 45vh;
-            height: 45vh;
-            display: inline-block;
-            background-repeat: no-repeat;
-            background-size: contain;
-            opacity: 0.75;
-            -webkit-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            -moz-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            -ms-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            -o-transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            transition: opacity 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-            cursor: pointer; }
-          .pageSlider .portfolioPage .container .content .projects .project:hover {
-            opacity: 1; }
-    .pageSlider .portfolioPage .projViewer {
-      position: absolute;
-      display: inline-block;
-      width: 70vw;
-      height: 100vh;
-      left: 0vw;
-      top: 0; }
-      .pageSlider .portfolioPage .projViewer > div {
-        position: absolute;
-        opacity: 0;
-        -webkit-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-        -moz-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-        -ms-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-        -o-transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
-        transition: opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96); }
-  .pageSlider .aboutPage {
+  .pageSlider .wefc {
     top: 200vh; }
-    .pageSlider .aboutPage .scroller {
-      width: 50vw;
-      height: 100vh;
-      left: calc(50% - 25vw);
-      z-index: 10;
-      position: absolute;
-      overflow-y: scroll; }
-      .pageSlider .aboutPage .scroller .content {
-        width: calc(100% - 10px);
-        height: 50vw;
-        box-shadow: 0 0 5px #000;
-        margin-left: 5px;
-        top: 0;
-        margin-top: 30vh;
-        margin-bottom: 5vh;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.75);
-        padding: 10vh 0; }
-        .pageSlider .aboutPage .scroller .content > p {
-          font-size: 1.2vw;
-          font-family: Verdana;
-          text-align: justify;
-          margin: 0px 2vw 20px; }
-  .pageSlider .contactPage {
+    .pageSlider .wefc .overlay {
+      width: 100vw; }
+    .pageSlider .wefc .container {
+      color: #fff;
+      font-family: Rodus300; }
+      .pageSlider .wefc .container .header {
+        position: absolute;
+        width: 100%;
+        top: 10vh; }
+        .pageSlider .wefc .container .header .projTitle {
+          position: relative;
+          font-size: 6vh;
+          text-shadow: 0 3px 3px #000; }
+        .pageSlider .wefc .container .header .projStatus {
+          position: relative;
+          display: block;
+          margin-top: 1vh;
+          font-size: 2vh;
+          text-shadow: 0 2px 1px #000; }
+      .pageSlider .wefc .container .content {
+        position: relative;
+        top: 15vh;
+        text-shadow: 0 3px 3px #000; }
+  .pageSlider .aboutPage {
     top: 300vh; }
 
 .diamond {

@@ -1,20 +1,10 @@
-* {
+h1, h2, h3, h4, h5, h6, p, span, div, article, header, footer {
     @include user-select(none);
 }
 
 html {
-  //background-color: #0073b3;
   text-align: center;
   height: 100%;
-}
-html:before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content:"";
-  //box-shadow: inset 0px 0px 111px #000;
 }
 
 body {
@@ -211,7 +201,7 @@ body {
     }
   }
 
-  /* Home Page */
+  //------------------Home Page------------------
   .homePage {
 
     .content {
@@ -239,114 +229,91 @@ body {
       }
     }
   }
+  //==================================================
 
-  /* Portfolio Page */
-  .portfolioPage {
+  //------------------JGP Page------------------
+  .jgp {
     top: 100vh;
-    left: -100vw;
-    width: 200vw;
 
     .overlay {
-      width: 200vw;
+      width: 100vw;
     }
     .container {
-      left: 115vw;
+      color: #fff;
+      font-family: Rodus300;
 
+      .header {
+
+        position: absolute;
+        width: 100%;
+        top: 10vh;
+
+        .projTitle {
+          position: relative;
+          font-size: 6vh;
+          text-shadow: 0 3px 3px #000;
+        }
+        .projStatus {
+          position: relative;
+          display: block;
+          margin-top: 1vh;
+          font-size: 2vh;
+          text-shadow: 0 2px 1px #000;
+        }
+      }
       .content {
         position: relative;
         top: 15vh;
-        font-family: Rodus300;
-        color: #fff;
         text-shadow: 0 3px 3px #000;
-
-        .portTitle {
-          font-size: 10vh;
-        }
-        .portTag {
-          font-family: Rodus100;
-          font-size: 3.5vh;
-        }
-        .projects {
-          position: relative;
-          margin-top: 5vh;
-
-          .project {
-            position: relative;
-            width: 45vh;
-            height: 45vh;
-            display: inline-block;
-            background-repeat: no-repeat;
-            background-size: contain;
-            opacity: 0.75;
-            @include transition(opacity 300ms $quad-cubic-bezier);
-            cursor: pointer;
-          }
-            .project:hover {
-              opacity: 1;
-            }
-        }
-      }
-    }
-    .projViewer {
-      position: absolute;
-      display: inline-block;
-      width: 70vw;
-      height: 100vh;
-      left: 0vw;
-      top: 0;
-      
-      > div {
-        position: absolute;
-        opacity: 0;
-        @include transition(opacity 500ms $quad-cubic-bezier);
-      }
-      .jgp {
-
-      }
-      .wefc {
-
       }
     }
   }
+  //==================================================
 
-  /* About Page */
-  .aboutPage {
+  //------------------WEFC Page------------------
+  .wefc {
     top: 200vh;
 
-    .scroller {
-      width: 50vw;
-      height: 100vh;
-      left: calc(50% - 25vw);
-      z-index: 10;
-      position: absolute;
-      overflow-y: scroll;
+    .overlay {
+      width: 100vw;
+    }
+    .container {
+      color: #fff;
+      font-family: Rodus300;
 
-      .content {
-        width: calc(100% - 10px);
-        height: 50vw;
-        box-shadow: 0 0 5px #000;
-        margin-left: 5px;
-        top: 0;
-        margin-top: 30vh;
-        margin-bottom: 5vh;
-        z-index: 1;
-        background-color: $rgba-white-75;
-        padding: 10vh 0;
+      .header {
 
-        > p {
-          font-size: 1.2vw;
-          font-family: Verdana;
-          text-align: justify;
-          margin: 0px 2vw 20px;
+        position: absolute;
+        width: 100%;
+        top: 10vh;
+
+        .projTitle {
+          position: relative;
+          font-size: 6vh;
+          text-shadow: 0 3px 3px #000;
         }
+        .projStatus {
+          position: relative;
+          display: block;
+          margin-top: 1vh;
+          font-size: 2vh;
+          text-shadow: 0 2px 1px #000;
+        }
+      }
+      .content {
+        position: relative;
+        top: 15vh;
+        text-shadow: 0 3px 3px #000;
       }
     }
   }
+  //==================================================
 
-  /* Contact Page */
-  .contactPage {
+  //------------------About Page------------------
+  .aboutPage {
     top: 300vh;
   }
+  //==================================================
 }
 
 // Diamonds Styles
