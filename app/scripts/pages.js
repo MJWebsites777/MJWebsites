@@ -10,17 +10,17 @@ function Pages() {
 		logoRotate += 720;
 
 		if (bgIndex < 3){
-	        bg.eq(bgIndex).css('opacity', '');
+	        bg.eq(bgIndex).opacity('');
 	        bgIndex++;
-	        bg.eq(bgIndex).css('opacity', '1');
+	        bg.eq(bgIndex).opacity(1);
 	    }
 
 	    prevPage = currentPage;
 	    currentPage++;
 	    pageName = $('.page').eq(currentPage).attr('class').replace(' page', '');
 	    checkPage();
-	    //$('.page').eq(prevPage).find('.content').css('opacity', '0');
-	    //$('.page').eq(currentPage).find('.content').css('opacity', '');
+	    //$('.page').eq(prevPage).find('.content').opacity(0);
+	    //$('.page').eq(currentPage).find('.content').opacity('');
 
 		//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
 		pageChanging = true;
@@ -39,17 +39,17 @@ function Pages() {
 		logoRotate += -720;
 
 		if (bgIndex > 0){
-	        bg.eq(bgIndex).css('opacity', '');
+	        bg.eq(bgIndex).opacity('');
 	        bgIndex--;
-	        bg.eq(bgIndex).css('opacity', '1');
+	        bg.eq(bgIndex).opacity(1);
 	    }
 
 	    prevPage = currentPage;
 	    currentPage--;
 	    pageName = $('.page').eq(currentPage).attr('class').replace(' page', '');
 	    checkPage();
-	    //$('.page').eq(prevPage).find('.content').css('opacity', '0');
-	    //$('.page').eq(currentPage).find('.content').css('opacity', '');
+	    //$('.page').eq(prevPage).find('.content').opacity(0);
+	    //$('.page').eq(currentPage).find('.content').opacity('');
 
 	 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
 	 	pageChanging = true;
@@ -62,26 +62,18 @@ function Pages() {
 		    }
 	 	});
 	};
-	self.goRight = function(callback) {
-		transformPageSlider('translateY('+translateY+'vh)', callback);
-
-	};
-	self.goLeft = function(callback) {
-		transformPageSlider('translateY('+translateY+'vh) translateX(100vw)', callback);
-	};
 
 	self.visit = {
 		0: function(){ // Home Page
 			animateDiamonds();
 		},
-		1: function(){ // Portfolio Page
-			
-			$('.portfolioPage .content').css('opacity', '');
+		1: function(){ // JGP Page
+			//$('.jgp .container .content').opacity('');
 		},
-		2: function(){ // About Page
+		2: function(){ // WEFC Page
 			return;
 		},	
-		3: function(){ // Contact Page
+		3: function(){ // About Page
 			return;
 		},
 		'default': function(){
@@ -94,13 +86,13 @@ function Pages() {
 		0: function(){ // Home Page
 			$('.diamond').removeClass('anim-diamond');
 		},
-		1: function(){ // Portfolio Page
+		1: function(){ // JGP Page
 			return;
 		},
-		2: function(){ // About Page
+		2: function(){ // WEFC Page
 			return;
 		},
-		3: function(){ // Contact Page
+		3: function(){ // About Page
 			return;
 		},
 		'default': function(){
