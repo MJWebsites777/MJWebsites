@@ -12,13 +12,13 @@ $(document).ready(function(e) {
 	var homeSpans = $('.homePage .content span');
 	var interval = setInterval(function(){
 		if (spanCount < homeSpans.length){
-			homeSpans.eq(spanCount).css('opacity', '1');
+			homeSpans.eq(spanCount).opacity(1);
 			spanCount++;
 		}
 		else {
 			$('.goDown').css('display', '');
 			setTimeout(function(){
-				$('.goDown').css('opacity', '').addClass('arrowFlash');
+				$('.goDown').opacity('').addClass('arrowFlash');
 				setTimeout(function(){
 					$('.goDown').attr('class', 'goDown');
 					siteLoading = false;
