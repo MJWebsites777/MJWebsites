@@ -6,6 +6,7 @@ onresize=onload=function() {
 	$('.monitoring').html("<span class=\"winFocus\">Window Focus: true</span><br />Width: "+winWidth+
 		"px<br />Height: "+winHeight+"px<br /><span class=\"ctrlDown\">isCTRLDown: "+isCtrlDown+
 		"</span><br /><span class=\"keycode\">KeyCode: "+keyCode+
+		"</span><br /><span class=\"mouseclick\">MouseClick: "+
 		"</span><br /><span class=\"pageCount\">Page Count: "+pageCount+
 		"</span><br /><span class=\"currentPage\">Current Page: "+currentPage+
 		"</span><br /><span class=\"xCoord\">Mouse X: null</span><br />"+
@@ -78,18 +79,6 @@ $(document).on("click", ".goDown", function() {
 		//$('.logo').css('border-radius', '0');
 	});
 });
-
-// Project click event
-$(document).on("click", ".container .project", function() {
-	if (pageChanging || currentPage != PORTFOLIO_PAGE) return;
-	$('.goDown, .goUp').css('opacity', '0');
-	setTimeout(function(){
-		$('.goDown, .goUp').css('display', 'none');
-	}, 700);
-	pages.goLeft(function(){
-		viewingProject = true;
-	});
-});
 	 
 // Mouse scroll event
 $('.pageSlider').on('DOMMouseScroll mousewheel', function(e){
@@ -111,4 +100,23 @@ $('html').on("mousemove", function(e) {
 	$('.yCoord').html("Mouse Y: "+y+"px ("+yPercent+"%)");
 	var elemHover = document.elementFromPoint(x, y);
 	$('.elemHover').html("Mouse Over Element: "+$(elemHover).attr('class'));
+});
+
+// Mouse Button Click
+$(document).on('mousedown', 'html', function(e){
+	switch (e.which){
+		case 1:
+			$('.mouseclick').html("MouseClick: Left");
+			break;
+		case 2:
+			$('.mouseclick').html("MouseClick: Scroll");
+			e.preventDefault();
+			break;
+		case 3:
+			$('.mouseclick').html("MouseClick: Right");
+			break;
+		default:
+			$('.mouseclick').html("MouseClick: Unknown");
+			break;
+	}
 });
