@@ -1,3 +1,4 @@
+/*
 // Browser reload/resize event
 onresize=onload=function() {
 	var winWidth = $(window).innerWidth();
@@ -13,7 +14,8 @@ onresize=onload=function() {
 		"<span class=\"yCoord\">Mouse Y: null</span><br />"+
 		"<span class=\"elemHover\">Mouse Over Element: null</span><br />"+
 		"<span class=\"scrolltop\">ST: null, OS: null</span>");
-}
+}  
+*/
 
 // Key down event
 $(window).bind("keydown", function(e) {
@@ -80,9 +82,27 @@ $(document).on("click", ".goDown", function() {
 	});
 });
 
-// Visit site button click
+// Visit site button click event
 $(document).on('click', '.visitBtn', function(){
 	window.open($(this).data('href'), '_blank');
+});
+
+// Thumbnail click event
+$(document).on('click', '.thumbnail', function(){
+	var t = $(this);
+	var index = t.index();
+	var preview = t.parent('.thumbnails').siblings('.preview');
+	if (t.index === preview.children('.active').index()) {return;}
+	if (index === 0) {
+		preview.children('.projImage').eq(1).removeClass('active');
+		preview.children('.projImage').eq(index).addClass('active');
+	}
+	else {
+		preview.children('.projImage').eq(0).removeClass('active');
+		preview.children('.projImage').eq(index).addClass('active');
+	}
+	t.parent('.thumbnails').children('.thumbnail').removeClass('active');
+	t.addClass('active');
 });
 	 
 // Mouse scroll event
