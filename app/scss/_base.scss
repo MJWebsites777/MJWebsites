@@ -66,7 +66,7 @@ body {
   margin-left: calc(-2.5vh - 1px);
   opacity: 1;
   //@include transition(opacity 500ms ease-in-out);
-  //cursor: pointer;
+  cursor: pointer;
 }
 .goUp {
   position: fixed;
@@ -175,8 +175,6 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    //width: 33.33%;
-    /*border: 5px solid #000;*/
     top: 0;
 
     .overlay {
@@ -185,12 +183,8 @@ body {
       background-color: $rgba-lightblue-75;
     }
     .container {
-      //border-right: 0.1vw solid #fff;
-      //border-left: 0.1vw solid #fff;
       width: 70vw;
       height: 60vh;
-      //box-shadow: 0 0 1px #000;
-      //background-color: $rgba-lightblue-75;
       position: absolute;
       left: 15vw;
       top: calc(70vh / 4);
@@ -205,6 +199,7 @@ body {
     .container {
       color: #fff;
       font-family: Rodus300;
+      //@include transition(opacity 1.5s $quad-cubic-bezier, transform 500ms $quad-cubic-bezier);
 
       > div {
         position: relative;
@@ -227,14 +222,14 @@ body {
           .projTitle {
             position: relative;
             font-size: 3vw;
-            text-shadow: 0 3px 3px #000;
+            //text-shadow: 0 3px 3px #000;
           }
           .projStatus {
             position: relative;
             display: block;
             margin-top: 1vh;
             font-size: 2vh;
-            text-shadow: 0 2px 1px #000;
+            //text-shadow: 0 2px 1px #000;
           }
         }
         .langs {
@@ -268,7 +263,57 @@ body {
           }
       }
       .imageContainer {
+        width: 70%;
+        float: right;
+        text-align: center;
 
+        .preview {
+          position: relative;
+          display: inline-block;
+          width: 80%;
+          height: calc((70vw * 0.56) / 1.779);
+          //left: 10%;
+          margin-bottom: 5vh;
+
+          .projImage {
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: auto;
+            left: 0;
+            opacity: 0;
+            @include transition(opacity 1s ease);
+          }
+          .projImage.active {
+            opacity: 1;
+          }
+        }
+        .thumbnails {
+          position: relative;
+          display: inline-block;
+          width: 90%;
+
+          .thumbnail {
+            position: relative;
+            display: inline-block;
+            width: 30%;
+            height: auto;
+            border: 1px solid #fff;
+            opacity: 0.5;
+            @include transition(opacity 500ms ease);
+            cursor: pointer;
+            margin: 0 2vw;
+          }
+            .thumbnail:hover {
+              opacity: 1 !important;
+            }
+          .thumbnail.active {
+            opacity: 1;
+          } 
+        }
+          .thumbnails:hover > .thumbnail {
+            opacity: 0.75;
+          }
       }
     }
   }
@@ -291,7 +336,7 @@ body {
         > span {
           display: block;
           font-size: 2vw;
-          text-shadow: 0 3px 7px #000;
+          //text-shadow: 0 3px 7px #000;
           margin-bottom: 5vh;
           opacity: 0;
           @include transition(opacity 1.5s ease-in-out);
@@ -300,7 +345,7 @@ body {
           font-size: 6vw;
         }
         .title {
-          text-shadow: 0 3px 3px #000;
+          //text-shadow: 0 3px 3px #000;
           font-family: Rodus100;
         }
       }

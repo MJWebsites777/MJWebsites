@@ -89,7 +89,8 @@ body {
   left: 50vw;
   margin-top: calc(-2.5vh - 1px);
   margin-left: calc(-2.5vh - 1px);
-  opacity: 1; }
+  opacity: 1;
+  cursor: pointer; }
 
 .goUp {
   position: fixed;
@@ -213,7 +214,6 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    /*border: 5px solid #000;*/
     top: 0; }
     .pageSlider .page .overlay {
       width: 100vw;
@@ -252,14 +252,12 @@ body {
         margin-bottom: 2vh; }
         .pageSlider .proj .container .infoContainer .heading .projTitle {
           position: relative;
-          font-size: 3vw;
-          text-shadow: 0 3px 3px #000; }
+          font-size: 3vw; }
         .pageSlider .proj .container .infoContainer .heading .projStatus {
           position: relative;
           display: block;
           margin-top: 1vh;
-          font-size: 2vh;
-          text-shadow: 0 2px 1px #000; }
+          font-size: 2vh; }
       .pageSlider .proj .container .infoContainer .langs {
         position: relative;
         width: 100%;
@@ -289,6 +287,54 @@ body {
         cursor: pointer; }
       .pageSlider .proj .container .infoContainer .visitBtn:hover {
         background-color: rgba(0, 0, 0, 0.5); }
+    .pageSlider .proj .container .imageContainer {
+      width: 70%;
+      float: right;
+      text-align: center; }
+      .pageSlider .proj .container .imageContainer .preview {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        height: calc((70vw * 0.56) / 1.779);
+        margin-bottom: 5vh; }
+        .pageSlider .proj .container .imageContainer .preview .projImage {
+          position: absolute;
+          display: inline-block;
+          width: 100%;
+          height: auto;
+          left: 0;
+          opacity: 0;
+          -webkit-transition: opacity 1s ease;
+          -moz-transition: opacity 1s ease;
+          -ms-transition: opacity 1s ease;
+          -o-transition: opacity 1s ease;
+          transition: opacity 1s ease; }
+        .pageSlider .proj .container .imageContainer .preview .projImage.active {
+          opacity: 1; }
+      .pageSlider .proj .container .imageContainer .thumbnails {
+        position: relative;
+        display: inline-block;
+        width: 90%; }
+        .pageSlider .proj .container .imageContainer .thumbnails .thumbnail {
+          position: relative;
+          display: inline-block;
+          width: 30%;
+          height: auto;
+          border: 1px solid #fff;
+          opacity: 0.5;
+          -webkit-transition: opacity 500ms ease;
+          -moz-transition: opacity 500ms ease;
+          -ms-transition: opacity 500ms ease;
+          -o-transition: opacity 500ms ease;
+          transition: opacity 500ms ease;
+          cursor: pointer;
+          margin: 0 2vw; }
+        .pageSlider .proj .container .imageContainer .thumbnails .thumbnail:hover {
+          opacity: 1 !important; }
+        .pageSlider .proj .container .imageContainer .thumbnails .thumbnail.active {
+          opacity: 1; }
+      .pageSlider .proj .container .imageContainer .thumbnails:hover > .thumbnail {
+        opacity: 0.75; }
   .pageSlider .homePage .container {
     height: 100vh;
     top: 0; }
@@ -302,7 +348,6 @@ body {
       .pageSlider .homePage .container .content > span {
         display: block;
         font-size: 2vw;
-        text-shadow: 0 3px 7px #000;
         margin-bottom: 5vh;
         opacity: 0;
         -webkit-transition: opacity 1.5s ease-in-out;
@@ -313,7 +358,6 @@ body {
       .pageSlider .homePage .container .content .name {
         font-size: 6vw; }
       .pageSlider .homePage .container .content .title {
-        text-shadow: 0 3px 3px #000;
         font-family: Rodus100; }
   .pageSlider .wefc {
     top: 100vh; }
