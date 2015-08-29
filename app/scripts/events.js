@@ -79,6 +79,11 @@ $(document).on("click", ".goDown", function() {
 		//$('.logo').css('border-radius', '0');
 	});
 });
+
+// Visit site button click
+$(document).on('click', '.visitBtn', function(){
+	window.open($(this).data('href'), '_blank');
+});
 	 
 // Mouse scroll event
 $('.pageSlider').on('DOMMouseScroll mousewheel', function(e){
