@@ -35,7 +35,8 @@ h1, h2, h3, h4, h5, h6, p, span, div, article, header, footer {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  cursor: default; }
 
 html {
   text-align: center;
@@ -220,10 +221,10 @@ body {
       background-color: rgba(0, 115, 179, 0.75); }
     .pageSlider .page .container {
       width: 70vw;
-      height: 100vh;
+      height: 60vh;
       position: absolute;
       left: 15vw;
-      top: 0;
+      top: calc(70vh / 4);
       z-index: 1; }
       .pageSlider .page .container .content {
         -webkit-transition: opacity 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
@@ -231,79 +232,93 @@ body {
         -ms-transition: opacity 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
         -o-transition: opacity 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96);
         transition: opacity 1.5s cubic-bezier(0.46, 0.03, 0.52, 0.96); }
-  .pageSlider .homePage .content {
-    color: #FFF;
-    font-family: Rodus300;
-    position: relative;
-    top: 47%;
-    cursor: default;
-    z-index: 10; }
-    .pageSlider .homePage .content > span {
-      display: block;
-      font-size: 2vw;
-      text-shadow: 0 3px 7px #000;
-      margin-bottom: 5vh;
-      opacity: 0;
-      -webkit-transition: opacity 1.5s ease-in-out;
-      -moz-transition: opacity 1.5s ease-in-out;
-      -ms-transition: opacity 1.5s ease-in-out;
-      -o-transition: opacity 1.5s ease-in-out;
-      transition: opacity 1.5s ease-in-out; }
-    .pageSlider .homePage .content .name {
-      font-size: 6vw; }
-    .pageSlider .homePage .content .title {
-      text-shadow: 0 3px 3px #000;
-      font-family: Rodus100; }
-  .pageSlider .jgp {
-    top: 100vh; }
-    .pageSlider .jgp .overlay {
-      width: 100vw; }
-    .pageSlider .jgp .container {
-      color: #fff;
-      font-family: Rodus300; }
-      .pageSlider .jgp .container .header {
-        position: absolute;
+  .pageSlider .proj .container {
+    color: #fff;
+    font-family: Rodus300; }
+    .pageSlider .proj .container > div {
+      position: relative;
+      display: inline-block;
+      height: 100%; }
+    .pageSlider .proj .container .infoContainer {
+      width: calc(30% - 16px);
+      float: left;
+      border-right: 1px solid #fff;
+      padding-right: 15px; }
+      .pageSlider .proj .container .infoContainer .heading {
+        position: relative;
         width: 100%;
-        top: 10vh; }
-        .pageSlider .jgp .container .header .projTitle {
+        text-align: right;
+        margin-top: -20px;
+        margin-bottom: 2vh; }
+        .pageSlider .proj .container .infoContainer .heading .projTitle {
           position: relative;
-          font-size: 6vh;
+          font-size: 3vw;
           text-shadow: 0 3px 3px #000; }
-        .pageSlider .jgp .container .header .projStatus {
+        .pageSlider .proj .container .infoContainer .heading .projStatus {
           position: relative;
           display: block;
           margin-top: 1vh;
           font-size: 2vh;
           text-shadow: 0 2px 1px #000; }
-      .pageSlider .jgp .container .content {
+      .pageSlider .proj .container .infoContainer .langs {
         position: relative;
-        top: 15vh;
-        text-shadow: 0 3px 3px #000; }
+        width: 100%;
+        padding: 1vh 1vw;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        font-size: 1vw; }
+      .pageSlider .proj .container .infoContainer .info {
+        position: relative;
+        margin-top: 3vh;
+        text-align: justify;
+        font-size: 1vw;
+        background-color: rgba(0, 0, 0, 0.25);
+        padding: 10px; }
+      .pageSlider .proj .container .infoContainer .visitBtn {
+        position: absolute;
+        width: calc(100% - 1px);
+        bottom: 0;
+        border: 1px solid #fff;
+        padding: 1vh 0;
+        font-size: 0.9vw;
+        -webkit-transition: background-color 500ms ease;
+        -moz-transition: background-color 500ms ease;
+        -ms-transition: background-color 500ms ease;
+        -o-transition: background-color 500ms ease;
+        transition: background-color 500ms ease;
+        cursor: pointer; }
+      .pageSlider .proj .container .infoContainer .visitBtn:hover {
+        background-color: rgba(0, 0, 0, 0.5); }
+  .pageSlider .homePage .container {
+    height: 100vh;
+    top: 0; }
+    .pageSlider .homePage .container .content {
+      color: #FFF;
+      font-family: Rodus300;
+      position: relative;
+      top: 47%;
+      cursor: default;
+      z-index: 10; }
+      .pageSlider .homePage .container .content > span {
+        display: block;
+        font-size: 2vw;
+        text-shadow: 0 3px 7px #000;
+        margin-bottom: 5vh;
+        opacity: 0;
+        -webkit-transition: opacity 1.5s ease-in-out;
+        -moz-transition: opacity 1.5s ease-in-out;
+        -ms-transition: opacity 1.5s ease-in-out;
+        -o-transition: opacity 1.5s ease-in-out;
+        transition: opacity 1.5s ease-in-out; }
+      .pageSlider .homePage .container .content .name {
+        font-size: 6vw; }
+      .pageSlider .homePage .container .content .title {
+        text-shadow: 0 3px 3px #000;
+        font-family: Rodus100; }
   .pageSlider .wefc {
+    top: 100vh; }
+  .pageSlider .jgp {
     top: 200vh; }
-    .pageSlider .wefc .overlay {
-      width: 100vw; }
-    .pageSlider .wefc .container {
-      color: #fff;
-      font-family: Rodus300; }
-      .pageSlider .wefc .container .header {
-        position: absolute;
-        width: 100%;
-        top: 10vh; }
-        .pageSlider .wefc .container .header .projTitle {
-          position: relative;
-          font-size: 6vh;
-          text-shadow: 0 3px 3px #000; }
-        .pageSlider .wefc .container .header .projStatus {
-          position: relative;
-          display: block;
-          margin-top: 1vh;
-          font-size: 2vh;
-          text-shadow: 0 2px 1px #000; }
-      .pageSlider .wefc .container .content {
-        position: relative;
-        top: 15vh;
-        text-shadow: 0 3px 3px #000; }
   .pageSlider .aboutPage {
     top: 300vh; }
 
