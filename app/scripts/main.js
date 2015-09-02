@@ -6,8 +6,6 @@ $(document).ready(function(e) {
 
 	console.log(navigator.userAgent);
 
-	$('.logo').removeClass('logoPre');
-
 	var spanCount = 0;
 	var homeSpans = $('.homePage .content span');
 	var interval = setInterval(function(){
@@ -25,7 +23,6 @@ $(document).ready(function(e) {
 				}, 800);
 			}, 50);
 			clearInterval(interval);
-			animateDiamonds();
 		}
 	}, 1000);
 
