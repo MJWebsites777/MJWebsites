@@ -55,23 +55,8 @@ function checkPage(){
 	$('.currentPage').html("Current Page: "+currentPage); 
 }
 
-function animateDiamonds(){
-	var i = 0;
-	var diaCount = $('.diamond').length;
-	var interval = setInterval(function(){
-	    if (i < diaCount){
-	      $('.diamond').eq(i).addClass('anim-diamond');
-	      i++;
-	    }
-	    else {
-	      clearInterval(interval);
-	    }
-	}, 1000);
-}
-
 function transformPageSlider(transform, callback){
-	$('.pageSlider').addClass('pSliderTransformTransition')
- 		.transform(transform)
+	$('.pageSlider').transform(transform)
  		.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
 	    	$(this).attr('class', 'pageSlider');
 	    	if (callback){
