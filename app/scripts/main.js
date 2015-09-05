@@ -6,6 +6,11 @@ $(document).ready(function(e) {
 
 	console.log(navigator.userAgent);
 
+	$('.logo').opacity('');
+	setTimeout(function(){
+		$('.tower').removeClass('towerPre');
+	}, 500);
+
 	var spanCount = 0;
 	var homeSpans = $('.homePage .content span');
 	var interval = setInterval(function(){
