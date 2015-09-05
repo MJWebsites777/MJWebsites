@@ -4,7 +4,7 @@ function Pages() {
 	var bg = $('.backgrounds div');
 	var pageName = null;
 
-	self.goDown = function(callback){
+	self.goDown = function(id, callback){
 		if (currentPage == (pageCount-1) || viewingProject) return;
 		translateY += -100;
 		logoRotate += 720;
@@ -24,8 +24,10 @@ function Pages() {
 
 		//$('.pageSlider').attr('class', 'pageSlider').addClass('pageRight');
 		pageChanging = true;
-		transformPageSlider('translateY('+translateY+'vh)', function(){
+		//console.log(id+' | pageChanging true');
+		transformPageSlider(id, 'translateY('+translateY+'vh)', function(i){
 	 		pageChanging = false;
+	 		//console.log(i+' | pageChanging false');
 		    self.visit[currentPage]();
 		    self.leave[prevPage]();
 		    if (callback){
@@ -33,7 +35,7 @@ function Pages() {
 		    }
 	 	});
 	};
-	self.goUp = function(callback){
+	self.goUp = function(id, callback){
 		if (currentPage == 0 || viewingProject) return;
 		translateY += 100;
 		logoRotate += -720;
@@ -53,8 +55,10 @@ function Pages() {
 
 	 	//$('.pageSlider').attr('class', 'pageSlider').addClass('pageLeft');
 	 	pageChanging = true;
-	 	transformPageSlider('translateY('+translateY+'vh)', function(){
+	 	//console.log(id+' | pageChanging true');
+	 	transformPageSlider(id, 'translateY('+translateY+'vh)', function(i){
 	 		pageChanging = false;
+	 		//console.log(i+' | pageChanging false');
 		    self.visit[currentPage]();
 		    self.leave[prevPage]();
 		    if (callback){
@@ -65,7 +69,6 @@ function Pages() {
 
 	self.visit = {
 		0: function(){ // Home Page
-			animateDiamonds();
 		},
 		1: function(){ // JGP Page
 			//$('.jgp .container .content').opacity('');
@@ -84,7 +87,6 @@ function Pages() {
 
 	self.leave = {
 		0: function(){ // Home Page
-			$('.diamond').removeClass('anim-diamond');
 		},
 		1: function(){ // JGP Page
 			return;
