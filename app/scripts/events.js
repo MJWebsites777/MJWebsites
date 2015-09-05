@@ -32,26 +32,18 @@ $(window).bind("keydown", function(e) {
 	var key = e.keyCode;
 	switch (key) {
 		case 37:
-		case 65:
 			//Left			
 			break;
 		case 38:
-		case 87:
 			//Up
-			pages.goUp(function(){
-				$('.logo').css('border-radius', '0');
-			});
+			pages.goUp();
 			break;
 		case 39:
-		case 68:
 			//Right
 			break;
 		case 40:
-		case 83:
 			//Down
-			pages.goDown(function(){
-				$('.logo').css('border-radius', '0');
-			});
+			pages.goDown();
 			break;
 		default:
 			break;
@@ -71,15 +63,11 @@ var translateY = 0;
 var logoRotate = 0;
 $(document).on("click", ".goUp", function() {
 	if (pageChanging) return;
-	pages.goUp(function(){
-		//$('.logo').css('border-radius', '0');
-	});
+	pages.goUp();
 });
 $(document).on("click", ".goDown", function() {
 	if (pageChanging) return;
-	pages.goDown(function(){
-		//$('.logo').css('border-radius', '0');
-	});
+	pages.goDown();
 });
 
 // Visit site button click event
@@ -106,13 +94,24 @@ $(document).on('click', '.thumbnail', function(){
 });
 	 
 // Mouse scroll event
+var i = 0;
 $('.pageSlider').on('DOMMouseScroll mousewheel', function(e){
+	//console.log('Scroll | PageChanging = '+pageChanging);
 	e.preventDefault();
 	if (pageChanging || siteLoading) return;
 	//var delta = 0;
 	var delta = parseInt(e.originalEvent.wheelDelta || -e.originalEvent.detail);
-	//console.log('delta: '+delta);
-	if (delta<0) pages.goDown(); else pages.goUp();
+	i === idArray.length-1 ? i=0 : i++;
+	var id = generateID();
+	//console.log(id+' | delta: '+delta);
+	if (delta<0) pages.goDown(id); else pages.goUp(id);
+});
+
+// Animate towers when mouse hovers over logo
+$('.logo').hover(function() {
+	$('.tower').addClass('towerPre');
+}, function() {
+	$('.tower').removeClass('towerPre');
 });
 
 // Mouse move event
