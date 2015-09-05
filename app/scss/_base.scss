@@ -164,10 +164,13 @@ body {
 }
 
 /* Pages Styles */
+.pageSliderTransition {
+  @include transition(transform 1.5s $quad-cubic-bezier);
+}
 .pageSlider {
   position: relative;
   height: 200vh;
-  @include transition(transform 1.5s $quad-cubic-bezier);
+  
 
   .page {
     position: absolute;
@@ -333,8 +336,13 @@ body {
           display: inline-block;
           width: 70%;
           height: 100%;
-          border-bottom: 1px solid #fff;
+          border-bottom: 0.2vw solid #fff;
+          opacity: 1;
+          @include transition(opacity 500ms $quad-cubic-bezier);
 
+          .towerPre {
+            transform: translateX(0) !important;
+          }
           .tower {
             position: relative;
             display: inline-block;
@@ -342,52 +350,34 @@ body {
             height: 30vh;
             top: 15vh;
             margin: 0 2px;
+            @include transition(transform 500ms $quad-cubic-bezier);
 
             .peakTop {
-              position: absolute;
+              position: relative;
               top: -4vh;
-              width: 0;
-              height: 0;
               border-left: 4vh solid transparent;
               border-right: 4vh solid transparent; 
+              border-bottom: 4vh solid #fff;
             }
             .peakBottom {
+              position: relative;
+              top: -4vh;
               border-left: 4vh solid transparent;
               border-right: 4vh solid transparent;
+              border-top: 4vh solid #fff;
             }
           }
           .tower.outside {
             height: 10vh;
-            background-color: rgba(255, 255, 255, 0.25);
-
-            .peakTop {
-              border-bottom: 4vh solid $rgba-white-25;
-            }
-            .peakBottom {
-              border-top: 4vh solid $rgba-white-25;
-            }
+            background-color: $rgba-white-25;
           }
           .tower.inside {
             height: 20vh;
             margin-bottom: -1px;
-            background-color: rgba(255, 255, 255, 0.5);
-
-            .peakTop {
-              border-bottom: 4vh solid $rgba-white-50;
-            }
-            .peakBottom {
-              border-top: 4vh solid $rgba-white-50;
-            }
+            background-color: $rgba-white-50;
           }
           .tower.middle {
-            background-color: rgba(255, 255, 255, 0.75);
-            
-            .peakTop {
-              border-bottom: 4vh solid $rgba-white-75;
-            }
-            .peakBottom {
-              border-top: 4vh solid $rgba-white-75;
-            }
+            background-color: $rgba-white-75;
           }
         }
       }
