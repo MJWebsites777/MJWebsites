@@ -55,12 +55,36 @@ function checkPage(){
 	$('.currentPage').html("Current Page: "+currentPage); 
 }
 
-function transformPageSlider(transform, callback){
+function transformPageSlider(id, transform, callback){
 	$('.pageSlider').transform(transform)
- 		.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
-	    	$(this).attr('class', 'pageSlider');
-	    	if (callback){
-		    	callback();
-		    }
-		});
+		.addClass('pageSliderTransition');
+		/*.on('transitionend webkitTransitionEnd oTransitionEnd', function(e){
+ 			$(this).off('transitionend webkitTransitionEnd oTransitionEnd');
+ 			/*if (e.target !== this){
+ 				console.log(id+' | child event fired');
+ 				return;
+ 			}
+ 			//e.stopPropagation();
+	    	//$(this).attr('class', 'pageSlider');
+	    	console.log(id+' | transitionend');
+		});*/
+	setTimeout(function(){
+		$('.pageSlider').removeClass('pageSliderTransition');
+		$(this).attr('class', 'pageSlider');
+    	if (callback){
+	    	callback(id);
+	    }
+	}, 1600);
+}
+
+var idArray = [];
+function generateID(){
+	var id = '';
+	for (var x=0;x<5;x++){
+		id+=''+Math.floor((Math.random() * 10));
+	}
+	if (idArray.indexOf(id) !== -1){
+		return generateID();
+	}
+	return id;
 }
