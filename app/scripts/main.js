@@ -6,9 +6,9 @@ $(document).ready(function(e) {
 
 	console.log(navigator.userAgent);
 
-	$('.logo').opacity('');
+	$('.homePage .logo').opacity('');
 	setTimeout(function(){
-		$('.tower').removeClass('towerPre');
+		$('.homePage .tower').removeClass('towerPre');
 	}, 500);
 
 	var spanCount = 0;
