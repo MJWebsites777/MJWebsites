@@ -151,12 +151,9 @@ module.exports = function (grunt) {
         browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
+        files: {
+          'app/styles/main.css':'app/styles/main.css'
+        }
       }
     },
 
