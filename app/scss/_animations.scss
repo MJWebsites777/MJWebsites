@@ -1,6 +1,6 @@
 /* Apply Animations */
 .rollIn {
-  @include animation(rollin 3s none);
+  animation: rollin 3s none;
 }
 
 /* Animations */

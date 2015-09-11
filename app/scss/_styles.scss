@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, p, span, div, article, header, footer {
-    @include user-select(none);
+    user-select: none;
     cursor: default;
 }
 
@@ -65,7 +65,7 @@ body {
   margin-left: -2.5vh;
   box-shadow: -5px -5px 3px -5px rgba(0, 0, 0, 0.5);
   opacity: 1;
-  //@include transition(opacity 500ms ease-in-out);
+  //transition: opacity 500ms ease-in-out);
   cursor: pointer;
   //@include filter-gradient(#ffffff, #00ffffff, horizontal);
   @include background-image(linear-gradient(left top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%));
@@ -76,13 +76,13 @@ body {
   height: 15vh;
   width: 100vw;
   opacity: 0.65;
-  @include transition(opacity 500ms ease-in-out);
+  transition: opacity 500ms ease-in-out;
   z-index: 11;
   cursor: pointer;
 
   .upArrow {
     top: 7vh;
-    @include transform(rotateZ(45deg));
+    transform: rotateZ(45deg);
   }
 }
   .goUp::before{
@@ -94,7 +94,7 @@ body {
     height: 80vh;
     box-shadow: 0 0 200px 100px $rgba-white-50;
     opacity: 0;
-    @include transition(opacity 700ms $quad-cubic-bezier);
+    transition: opacity 700ms $quad-cubic-bezier;
     border-radius: 250px;
   }
   .goUp:hover{
@@ -110,13 +110,13 @@ body {
   height: 15vh;
   width: 100vw;
   opacity: 0.65;
-  @include transition(opacity 700ms $quad-cubic-bezier);
+  transition: opacity 700ms $quad-cubic-bezier;
   z-index: 11;
   cursor: pointer;
 
   .downArrow {
     top: 93vh;
-    @include transform(rotateZ(-135deg));
+    transform: rotateZ(-135deg);
   }
 }
   .goDown::before{
@@ -128,7 +128,7 @@ body {
     height: 80vh;
     box-shadow: 0 0 200px 100px $rgba-white-50;
     opacity: 0;
-    @include transition(opacity 500ms ease-in-out);
+    transition: opacity 500ms ease-in-out;
     border-radius: 250px;
   }
   .goDown:hover{
@@ -159,12 +159,12 @@ body {
 }
 
 .notransition {
-  @include transition(none !important);
+  transition: none !important;
 }
 
 /* Pages Styles */
 .pageSliderTransition {
-  @include transition(transform 1.5s $quad-cubic-bezier);
+  transition: transform 1.5s $quad-cubic-bezier;
 }
 .pageSlider {
   position: relative;
@@ -195,7 +195,7 @@ body {
     .container {
       color: #fff;
       font-family: Rodus300;
-      //@include transition(opacity 1.5s $quad-cubic-bezier, transform 500ms $quad-cubic-bezier);
+      //transition: opacity 1.5s $quad-cubic-bezier, transform 500ms $quad-cubic-bezier);
 
       > div {
         position: relative;
@@ -251,7 +251,7 @@ body {
           border: 1px solid #fff;
           padding: 1vh 0;
           font-size: 0.9vw;
-          @include transition(background-color 500ms ease);
+          transition: background-color 500ms ease;
           cursor: pointer;
         }
           .visitBtn:hover {
@@ -278,7 +278,7 @@ body {
             height: auto;
             left: 0;
             opacity: 0;
-            @include transition(opacity 1s ease);
+            transition: opacity 1s ease;
           }
           .projImage.active {
             opacity: 1;
@@ -296,7 +296,7 @@ body {
             height: auto;
             border: 1px solid #fff;
             opacity: 0.5;
-            @include transition(opacity 500ms ease);
+            transition: opacity 500ms ease;
             cursor: pointer;
             margin: 0 2vw;
           }
@@ -340,7 +340,7 @@ body {
           //text-shadow: 0 3px 7px #000;
           margin-bottom: 5vh;
           opacity: 0;
-          @include transition(opacity 1.5s ease-in-out);
+          transition: opacity 1.5s ease-in-out;
         }
         .name {
           font-size: 6vw;
@@ -378,7 +378,7 @@ body {
         height: 50vh;
         font-family: Rodus100;
         color: #fff;
-        @include transition(opacity 1.5s $quad-cubic-bezier);
+        transition: opacity 1.5s $quad-cubic-bezier;
 
         .column {
           position: relative;
@@ -421,7 +421,7 @@ body {
               height: 10vh;
               top: -2vh;
               background-color: $rgba-white-50;
-              @include transform(rotateZ(45deg));
+              transform: rotateZ(45deg));
               z-index: 1;
 
               .profilePic {
@@ -457,7 +457,7 @@ body {
   height: 100%;
   border-bottom: 0.2vw solid #fff;
   opacity: 1;
-  @include transition(opacity 500ms $quad-cubic-bezier);
+  transition: opacity 500ms $quad-cubic-bezier;
 
   .towerPre {
     transform: translateX(0) !important;
@@ -469,7 +469,7 @@ body {
     height: 30vh;
     top: 15vh;
     margin: 0 2px;
-    @include transition(transform 500ms $quad-cubic-bezier);
+    transition: transform 500ms $quad-cubic-bezier;
 
     .peakTop {
       position: relative;
