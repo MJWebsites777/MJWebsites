@@ -195,6 +195,9 @@ module.exports = function (grunt) {
           dest: '<%= config.app %>/styles',
           ext: '.css'
         }]
+      },
+      options: {
+        compass: true
       }
     },
 
