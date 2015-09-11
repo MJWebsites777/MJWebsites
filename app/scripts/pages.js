@@ -77,6 +77,7 @@ function Pages() {
 			return;
 		},	
 		3: function(){ // About Page
+			$('.aboutPage .tower').removeClass('towerPre');
 			return;
 		},
 		'default': function(){
