@@ -4,8 +4,7 @@ Personal web design portfolio for myself.
 ### Operating System Used:
 - Windows 7 & 10
 
-** Programs Used:
-
+### Programs Used:
 - Sublime Text 2
 - Google Chrome Dev Tools
 - Adobe PhotoShop
