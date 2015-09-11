@@ -152,7 +152,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'app/styles/main.css':'app/styles/main.css'
+          '<%= config.app %>/styles/main.css':'<%= config.app %>/styles/main.css'
         }
       }
     },
@@ -388,8 +388,8 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'sass',
-    'concurrent:dist',
     'autoprefixer',
+    'concurrent:dist',
     'concat',
     'cssmin',
     'uglify',
